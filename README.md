@@ -1,0 +1,324 @@
+# Evaluation-Only Framework for Prompt-Driven Document Extraction
+
+## 🎯 Overview
+
+This is an **evaluation-only microservice** that assesses the outputs of existing OCR-plus-prompt pipelines and provides data-driven feedback for prompt optimization. The framework is completely decoupled from upstream OCR systems and focuses on metrics, statistics, and continuous improvement.
+
+## 🏗️ Architecture
+
+### Key Design Principles
+
+- **Evaluation-Only**: Never touches pixel data or performs OCR
+- **Decoupled**: Works with any existing OCR-plus-prompt pipeline
+- **Lightweight**: CPU-only instances, scales with JSON throughput
+- **Metrics-Driven**: Provides quantifiable performance insights
+- **Feedback Loops**: Enables continuous prompt optimization
+
+### System Components
+
+| Component | Purpose | Technology |
+|-----------|---------|------------|
+| **Ingestion Layer** | Parse evaluation inputs | Pydantic models |
+| **Field Evaluator** | Score individual fields | DSPy modules |
+| **Document Aggregator** | Combine field scores | DSPy metrics |
+| **Statistics Store** | Persist evaluation data | Database + Pydantic |
+| **Optimization Engine** | Generate prompt improvements | DSPy optimizers |
+
+## 📁 Project Structure
+
+```
+doc-prompt-improvement/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── CORRECTED_IMPLEMENTATION_PLAN.md
+├── src/
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── evaluation_models.py          # Pydantic models for evaluation
+│   ├── evaluators/
+│   │   ├── __init__.py
+│   │   └── evaluation_signatures.py     # DSPy evaluation signatures
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── evaluation_service.py        # FastAPI evaluation service
+│   └── utils/
+│       ├── __init__.py
+│       ├── config.py                    # Configuration management
+│       └── logging.py                   # Structured logging
+├── demos/
+│   └── evaluation_demo.py               # Demo showcasing evaluation capabilities
+├── tests/
+│   ├── unit/
+│   ├── integration/
+│   └── end_to_end/
+├── data/
+│   ├── samples/                         # Sample evaluation data
+│   └── schemas/                         # Document schemas
+└── scripts/
+    └── generate_demo_data.py            # Data generation utilities
+```
+
+## 🚀 Quick Start
+
+### 1. Setup Environment
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd doc-prompt-improvement
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Copy environment template
+cp .env.example .env
+
+# Edit .env with your API keys
+# OPENAI_API_KEY=your_openai_api_key_here
+# ANTHROPIC_API_KEY=your_anthropic_api_key_here
+```
+
+### 2. Run the Demo
+
+```bash
+# Run the evaluation demo
+python demos/evaluation_demo.py
+```
+
+### 3. Start the Evaluation Service
+
+```bash
+# Start the FastAPI service
+python -m src.api.evaluation_service
+```
+
+The service will be available at `http://localhost:8000`
+
+### 4. API Endpoints
+
+- `POST /evaluate` - Evaluate document extraction results
+- `GET /stats` - Get evaluation statistics
+- `POST /optimize` - Generate prompt optimization recommendations
+- `GET /health` - Health check
+- `GET /config` - Get configuration
+- `POST /config` - Update configuration
+- `POST /reset` - Reset statistics
+
+## 📊 Usage Examples
+
+### Evaluate Document Extraction
+
+```python
+from src.models.evaluation_models import DocumentEvaluationInput
+from src.api.evaluation_service import DocumentExtractionEvaluator
+
+# Create evaluation input
+evaluation_input = DocumentEvaluationInput(
+    document_id="invoice_001",
+    document_type="invoice",
+    extracted_fields={
+        "vendor_name": "Acme Corporation",
+        "invoice_number": "INV-2024-001",
+        "total_amount": "1250.00"
+    },
+    ground_truth={
+        "vendor_name": "Acme Corporation",
+        "invoice_number": "INV-2024-001", 
+        "total_amount": "1250.00"
+    },
+    confidence_scores={
+        "vendor_name": 0.95,
+        "invoice_number": 0.98,
+        "total_amount": 0.96
+    }
+)
+
+# Initialize evaluator
+evaluator = DocumentExtractionEvaluator()
+
+# Perform evaluation
+result = evaluator.evaluate_document(evaluation_input)
+print(f"Overall accuracy: {result.overall_accuracy:.1%}")
+```
+
+### Generate Optimization Recommendations
+
+```python
+# Get optimization metrics
+metrics = evaluator.get_optimization_metrics()
+
+# Generate optimization recommendations
+optimization_result = evaluator.optimizer(
+    evaluation_statistics=json.dumps(metrics),
+    failure_patterns=json.dumps(common_errors),
+    current_prompt=current_prompt,
+    target_improvement=0.1
+)
+
+print(f"Optimized prompt: {optimization_result.optimized_prompt}")
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+```bash
+# Service Configuration
+EVALUATION_SERVICE_PORT=8000
+EVALUATION_SERVICE_HOST=0.0.0.0
+
+# LLM Configuration
+OPENAI_API_KEY=your_openai_api_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
+DEFAULT_LLM_PROVIDER=openai
+
+# Evaluation Parameters
+CONFIDENCE_THRESHOLD=0.7
+SUCCESS_THRESHOLD=0.8
+OPTIMIZATION_INTERVAL=100
+
+# Monitoring
+METRICS_ENABLED=true
+ALERT_THRESHOLD=0.75
+```
+
+### Evaluation Configuration
+
+```python
+from src.models.evaluation_models import EvaluationConfig
+
+config = EvaluationConfig(
+    confidence_threshold=0.7,
+    success_threshold=0.8,
+    partial_threshold=0.5,
+    enable_partial_credit=True,
+    strict_matching=False,
+    case_sensitive=False,
+    normalize_whitespace=True
+)
+```
+
+## 📈 Performance Metrics
+
+### Evaluation Accuracy
+- **Field-level precision**: Target 95%+
+- **Recall accuracy**: Target 90%+
+- **Confidence calibration**: Target 85%+ correlation
+- **Error detection**: Target 90%+ failure identification
+
+### Processing Performance
+- **Evaluation speed**: < 100ms per document
+- **Throughput**: > 1000 documents per minute
+- **Memory efficiency**: < 1GB RAM for batch processing
+- **CPU utilization**: < 80% under normal load
+
+### Optimization Effectiveness
+- **Improvement rate**: > 10% accuracy improvement per cycle
+- **Convergence time**: < 5 optimization cycles
+- **Prompt quality**: Measurable improvement in extraction accuracy
+- **Feedback loop**: < 24 hours from evaluation to optimization
+
+## 🧪 Testing
+
+### Run Tests
+
+```bash
+# Run unit tests
+python -m pytest tests/unit/
+
+# Run integration tests
+python -m pytest tests/integration/
+
+# Run end-to-end tests
+python -m pytest tests/end_to_end/
+```
+
+### Performance Testing
+
+```bash
+# Run performance benchmarks
+python scripts/run_benchmarks.py
+```
+
+## 🚀 Deployment
+
+### Development
+
+```bash
+# Local development with hot reload
+uvicorn src.api.evaluation_service:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Production
+
+```bash
+# Using Docker
+docker build -t evaluation-service .
+docker run -p 8000:8000 evaluation-service
+
+# Using Kubernetes
+kubectl apply -f k8s/
+```
+
+## 📋 Implementation Status
+
+### ✅ Phase 1: Core Evaluation Framework (COMPLETED)
+- [x] Pydantic data models for evaluation
+- [x] DSPy evaluation signatures
+- [x] Basic evaluation pipeline
+- [x] Configuration management
+- [x] Structured logging
+- [x] FastAPI service
+- [x] Demo application
+
+### 🔄 Phase 2: Evaluation Pipeline (IN PROGRESS)
+- [ ] Field-level evaluation logic
+- [ ] Document-level aggregation
+- [ ] Confidence scoring algorithms
+- [ ] Error pattern detection
+- [ ] Evaluation result persistence
+
+### 📋 Phase 3: Statistics & Monitoring (PLANNED)
+- [ ] Statistics collection engine
+- [ ] Performance dashboards
+- [ ] Trend analysis
+- [ ] Alert systems
+- [ ] Data persistence layer
+
+### 📋 Phase 4: Optimization Engine (PLANNED)
+- [ ] DSPy optimizer integration
+- [ ] Failure pattern analysis
+- [ ] Prompt improvement generation
+- [ ] Optimization feedback loops
+- [ ] A/B testing support
+
+### 📋 Phase 5: API & Integration (PLANNED)
+- [ ] FastAPI microservice
+- [ ] REST API endpoints
+- [ ] Integration documentation
+- [ ] Deployment configuration
+- [ ] Performance optimization
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For support and questions:
+- Create an issue in the repository
+- Check the documentation
+- Review the demo examples
+
+---
+
+*This framework provides a lightweight, decoupled evaluation service that transforms vague prompt tweaking into a rigorous, metric-driven discipline.* 
