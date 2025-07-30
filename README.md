@@ -84,6 +84,9 @@ cp .env.example .env
 ```bash
 # Run the evaluation demo
 python demos/evaluation_demo.py
+
+# Or use the CLI
+python -m src.cli.main demo
 ```
 
 ### 3. Start the Evaluation Service
@@ -91,11 +94,33 @@ python demos/evaluation_demo.py
 ```bash
 # Start the FastAPI service
 python -m src.api.evaluation_service
+
+# Or use the CLI
+python -m src.cli.main serve --port 8000
 ```
 
 The service will be available at `http://localhost:8000`
 
-### 4. API Endpoints
+### 4. CLI Commands
+
+```bash
+# Run evaluation with dummy data
+python -m src.cli.main evaluate
+
+# Generate dummy data
+python -m src.cli.main generate-data --num-documents 100
+
+# Analyze results
+python -m src.cli.main analyze --input-file results.json --output-file analysis.json
+
+# Run tests
+python -m src.cli.main test --coverage
+
+# Run comprehensive demo
+python -m src.cli.main demo
+```
+
+### 5. API Endpoints
 
 - `POST /evaluate` - Evaluate document extraction results
 - `GET /stats` - Get evaluation statistics
