@@ -13,6 +13,18 @@ from .evaluation_models import (
     EvaluationConfig
 )
 
+from .feedback_models import (
+    FeedbackStatus,
+    FeedbackReason,
+    FieldFeedback,
+    UserFeedbackRecord,
+    FeedbackAggregation,
+    FeedbackTrend,
+    FeedbackAlert,
+    FeedbackOptimizationRecommendation,
+    FeedbackStatistics
+)
+
 __all__ = [
     "ExtractionStatus",
     "FieldEvaluationResult", 
@@ -21,5 +33,14 @@ __all__ = [
     "EvaluationStatistics",
     "FailurePattern",
     "OptimizationRecommendation",
-    "EvaluationConfig"
+    "EvaluationConfig",
+    "FeedbackStatus",
+    "FeedbackReason",
+    "FieldFeedback",
+    "UserFeedbackRecord",
+    "FeedbackAggregation",
+    "FeedbackTrend",
+    "FeedbackAlert",
+    "FeedbackOptimizationRecommendation",
+    "FeedbackStatistics"
 ] 

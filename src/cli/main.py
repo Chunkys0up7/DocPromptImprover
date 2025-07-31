@@ -16,8 +16,10 @@ from ..evaluators.field_evaluator import FieldEvaluator
 from ..evaluators.document_aggregator import DocumentAggregator
 from ..evaluators.error_pattern_detector import ErrorPatternDetector
 from ..statistics.statistics_engine import StatisticsEngine
+from ..feedback.feedback_collector import FeedbackCollector
 from ..models.evaluation_models import DocumentEvaluationInput
 from data.dummy_data_generator import DummyDataGenerator
+from data.feedback_data_generator import FeedbackDataGenerator
 
 
 @click.group()
@@ -285,6 +287,161 @@ def demo():
         click.echo(f"❌ Failed to import demo: {e}")
     except Exception as e:
         click.echo(f"❌ Demo failed: {e}")
+
+
+@cli.command()
+@click.option("--num-records", "-n", default=20, help="Number of feedback records to generate")
+@click.option("--output-file", "-o", default="feedback_data.json", help="Output file")
+@click.option("--historical", is_flag=True, help="Generate historical feedback data")
+@click.option("--days-back", default=7, help="Number of days back for historical data")
+def generate_feedback(num_records: int, output_file: str, historical: bool, days_back: int):
+    """Generate sample feedback data for testing and demos."""
+    
+    click.echo("📝 Generating Feedback Data")
+    
+    generator = FeedbackDataGenerator()
+    
+    if historical:
+        click.echo(f"📅 Generating historical feedback data for {days_back} days...")
+        feedback_data = generator.generate_historical_feedback(days_back=days_back, records_per_day=3)
+    else:
+        click.echo(f"📊 Generating {num_records} feedback records...")
+        feedback_data = generator.generate_feedback_batch(num_records)
+    
+    # Save to file
+    with open(output_file, 'w') as f:
+        json.dump(feedback_data, f, indent=2, default=str)
+    
+    click.echo(f"✅ Generated {len(feedback_data)} feedback records")
+    click.echo(f"📁 Saved to {output_file}")
+    
+    # Show statistics
+    correct_count = sum(
+        1 for record in feedback_data
+        for field in record["field_feedback"]
+        if field["feedback_status"] == "correct"
+    )
+    total_fields = sum(len(record["field_feedback"]) for record in feedback_data)
+    accuracy_rate = correct_count / total_fields if total_fields > 0 else 0
+    
+    click.echo(f"\n📈 Feedback Statistics:")
+    click.echo(f"  Total Records: {len(feedback_data)}")
+    click.echo(f"  Total Fields: {total_fields}")
+    click.echo(f"  Overall Accuracy: {accuracy_rate:.1%}")
+
+
+@cli.command()
+@click.option("--input-file", "-i", type=click.Path(exists=True), help="Input JSON file with feedback data")
+@click.option("--output-file", "-o", type=click.Path(), help="Output file for analysis")
+@click.option("--field-name", help="Filter by specific field")
+@click.option("--time-period", default="7d", help="Time period for analysis (e.g., 7d, 30d)")
+def analyze_feedback(input_file: Optional[str], output_file: Optional[str], field_name: Optional[str], time_period: str):
+    """Analyze feedback data and generate reports."""
+    
+    click.echo("🔍 Analyzing Feedback Data")
+    
+    # Initialize feedback collector
+    collector = FeedbackCollector()
+    
+    if input_file:
+        # Load feedback data from file
+        with open(input_file, 'r') as f:
+            feedback_data = json.load(f)
+        
+        click.echo(f"📂 Loading {len(feedback_data)} feedback records from {input_file}")
+        
+        # Process feedback data
+        with click.progressbar(feedback_data, label="Processing feedback") as records:
+            for feedback_record in records:
+                collector.collect_feedback(feedback_record)
+    else:
+        # Generate sample data
+        click.echo("📊 Generating sample feedback data for analysis...")
+        generator = FeedbackDataGenerator()
+        feedback_batch = generator.generate_feedback_batch(50)
+        
+        with click.progressbar(feedback_batch, label="Processing feedback") as records:
+            for feedback_record in records:
+                collector.collect_feedback(feedback_record)
+    
+    # Generate analysis
+    click.echo("\n📈 Generating Feedback Analysis...")
+    
+    # Overall statistics
+    stats = collector.get_feedback_statistics()
+    click.echo(f"\n📊 Overall Statistics:")
+    click.echo(f"  Total Records: {stats.total_feedback_records}")
+    click.echo(f"  Total Fields: {stats.total_fields_evaluated}")
+    click.echo(f"  Overall Accuracy: {stats.overall_accuracy_rate:.1%}")
+    
+    # Field aggregations
+    aggregations = collector.get_feedback_aggregation(field_name=field_name, time_period=time_period)
+    click.echo(f"\n📋 Field Analysis ({len(aggregations)} fields):")
+    
+    for agg in aggregations[:10]:  # Show top 10
+        click.echo(f"  {agg.field_name}:")
+        click.echo(f"    Accuracy: {agg.accuracy_rate:.1%} ({agg.correct_count}/{agg.total_feedback})")
+        if agg.common_reasons:
+            top_reason = agg.common_reasons[0]
+            click.echo(f"    Top Issue: {top_reason['reason']} ({top_reason['percentage']:.1%})")
+    
+    # Trends
+    trends = collector.get_feedback_trends(time_period=time_period)
+    click.echo(f"\n📈 Trends ({len(trends)} data points):")
+    
+    # Group by field
+    field_trends = {}
+    for trend in trends:
+        if trend.field_name not in field_trends:
+            field_trends[trend.field_name] = []
+        field_trends[trend.field_name].append(trend)
+    
+    for field_name, trend_list in list(field_trends.items())[:5]:
+        click.echo(f"  {field_name}: {len(trend_list)} trend points")
+    
+    # Alerts
+    alerts = collector.get_active_alerts()
+    click.echo(f"\n🚨 Active Alerts: {len(alerts)}")
+    for alert in alerts[:5]:
+        click.echo(f"  {alert.field_name}: {alert.description}")
+    
+    # Recommendations
+    recommendations = collector.get_optimization_recommendations()
+    click.echo(f"\n💡 Optimization Recommendations: {len(recommendations)}")
+    for rec in recommendations[:5]:
+        click.echo(f"  {rec.field_name}: {rec.description} (Priority: {rec.priority})")
+    
+    # Save analysis if output file specified
+    if output_file:
+        analysis_data = {
+            "statistics": stats.dict(),
+            "aggregations": [agg.dict() for agg in aggregations],
+            "trends": [trend.dict() for trend in trends],
+            "alerts": [alert.dict() for alert in alerts],
+            "recommendations": [rec.dict() for rec in recommendations],
+            "generated_at": datetime.now().isoformat()
+        }
+        
+        with open(output_file, 'w') as f:
+            json.dump(analysis_data, f, indent=2, default=str)
+        
+        click.echo(f"\n📁 Analysis saved to {output_file}")
+
+
+@cli.command()
+def feedback_demo():
+    """Run a demonstration of the feedback system."""
+    
+    click.echo("🎯 Running Feedback System Demo")
+    click.echo("This demo shows the feedback collection and analysis functionality.")
+    
+    # Import and run the feedback demo
+    try:
+        from demos.feedback_demo import main as feedback_demo_main
+        feedback_demo_main()
+    except ImportError as e:
+        click.echo(f"❌ Error importing feedback demo: {e}")
+        click.echo("Make sure the feedback demo files are available.")
 
 
 def _determine_field_type(field_name: str, value) -> str:

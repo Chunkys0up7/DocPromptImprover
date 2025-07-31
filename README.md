@@ -9,6 +9,9 @@ This is an **evaluation-only microservice** that assesses the outputs of existin
 - 📊 **Performance Analysis**: Comprehensive metrics and trend analysis
 - 🎯 **Pattern Detection**: Automated identification of failure patterns
 - 📈 **Data-Driven Insights**: Actionable recommendations for prompt improvement
+- 👥 **User Feedback Collection**: Collect and analyze user feedback on extraction results
+- 🚨 **Real-Time Alerts**: Automated alerts for performance issues
+- 📈 **Trend Analysis**: Track performance changes over time
 - 🚫 **No LLM Dependencies**: Pure statistical analysis without AI/ML requirements
 
 ## ✅ Implementation Status
@@ -26,6 +29,9 @@ This is an **evaluation-only microservice** that assesses the outputs of existin
 - 📊 Document-level aggregation and performance analysis
 - 🎯 Error pattern detection and optimization recommendations
 - 📈 Comprehensive statistics and trend analysis
+- 👥 User feedback collection and analysis system
+- 🚨 Real-time alerting for performance issues
+- 📈 Historical trend analysis and reporting
 - 🖥️ CLI interface and FastAPI service
 - 🧪 Complete test suite with unit and integration tests
 - 📚 Full documentation and usage examples
@@ -50,6 +56,9 @@ This is an **evaluation-only microservice** that assesses the outputs of existin
 | **Statistics Store** | Persist evaluation data | Database + Pydantic |
 | **Pattern Detector** | Identify failure patterns | Statistical analysis |
 | **Recommendation Engine** | Generate improvement suggestions | Rule-based analysis |
+| **Feedback Collector** | Collect user feedback | Pydantic validation |
+| **Alert System** | Monitor performance issues | Threshold-based alerts |
+| **Trend Analyzer** | Track performance over time | Time-series analysis |
 
 ## 📁 Project Structure
 
@@ -62,13 +71,25 @@ doc-prompt-improvement/
 ├── src/
 │   ├── models/
 │   │   ├── __init__.py
-│   │   └── evaluation_models.py          # Pydantic models for evaluation
+│   │   ├── evaluation_models.py         # Pydantic models for evaluation
+│   │   └── feedback_models.py           # Pydantic models for feedback
 │   ├── evaluators/
 │   │   ├── __init__.py
-│   │   └── evaluation_signatures.py     # DSPy evaluation signatures
+│   │   ├── field_evaluator.py           # Field-level evaluation
+│   │   ├── document_aggregator.py       # Document aggregation
+│   │   └── error_pattern_detector.py    # Error pattern detection
+│   ├── feedback/
+│   │   ├── __init__.py
+│   │   └── feedback_collector.py        # Feedback collection and analysis
+│   ├── statistics/
+│   │   ├── __init__.py
+│   │   └── statistics_engine.py         # Statistics and metrics
 │   ├── api/
 │   │   ├── __init__.py
 │   │   └── evaluation_service.py        # FastAPI evaluation service
+│   ├── cli/
+│   │   ├── __init__.py
+│   │   └── main.py                      # CLI interface
 │   └── utils/
 │       ├── __init__.py
 │       ├── config.py                    # Configuration management

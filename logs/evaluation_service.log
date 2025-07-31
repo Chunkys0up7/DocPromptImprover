@@ -5,3 +5,134 @@
 {"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T00:43:24.384258Z"}
 {"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:43:24.387768Z"}
 {"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:43:24.387768Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:57:32.441245Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:57:32.442242Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:57:32.442242Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:57:32.442242Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T00:57:32.443241Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:57:32.459361Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:57:32.459361Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:57:32.460361Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:57:32.460361Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:57:32.460361Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:57:32.460361Z"}
+{"event": "Detecting patterns in 50 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:57:32.598614Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:58:36.807086Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:58:36.807713Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:58:36.808284Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:58:36.808284Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T00:58:36.808284Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:58:36.812136Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:58:36.812136Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:58:54.460699Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:58:54.460699Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:58:54.461698Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:58:54.461698Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T00:58:54.461698Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:58:54.471216Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:58:54.472222Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:58:54.472222Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:58:54.472222Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:58:54.472222Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:58:54.473222Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:14:28.388072Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:28.389072Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:28.389072Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:14:28.389072Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:14:28.389072Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:28.395091Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:28.395091Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:14:28.395091Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:14:28.395091Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:28.395091Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:28.396322Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:14:50.487915Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:50.488913Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:50.488913Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:14:50.488913Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:14:50.488913Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:50.496436Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:50.496436Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:14:50.496436Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:14:50.497455Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:14:50.497455Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:14:50.497455Z"}
+{"event": "Detecting patterns in 3 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:14:50.510955Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:15:51.169212Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:15:51.170245Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:15:51.170245Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:15:51.171228Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:15:51.171228Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:15:51.178721Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:15:51.178721Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:15:51.178721Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:15:51.178721Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:15:51.179734Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:15:51.179734Z"}
+{"event": "Detecting patterns in 3 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:15:51.194243Z"}
+{"event": "Detected 9 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:15:51.195751Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:16:04.924079Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:04.925079Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:04.925079Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:04.925079Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:16:04.925079Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:04.930496Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:04.931488Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:04.931488Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:16:04.931488Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:04.931488Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:04.932488Z"}
+{"event": "Detecting patterns in 3 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:04.945059Z"}
+{"event": "Detected 6 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:04.947121Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:16:15.000856Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:15.000856Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:15.001902Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:15.001902Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:16:15.001902Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:15.010126Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:15.010126Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:15.010126Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:16:15.010126Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:16:15.011124Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:16:15.011124Z"}
+{"event": "Detecting patterns in 50 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:15.091400Z"}
+{"event": "Detected 60 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:16:15.132352Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:11.392624Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:11.393623Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:11.393623Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:11.393623Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:18:11.393623Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:11.400135Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:11.401135Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:11.401135Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:11.401135Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:11.401135Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:11.402135Z"}
+{"event": "Detecting patterns in 3 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:11.415663Z"}
+{"event": "Detected 9 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:11.416667Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:15.968228Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:15.969179Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:15.969179Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:15.969179Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:18:15.969179Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:15.977729Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:15.977729Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:15.978781Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:15.978781Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:15.978781Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:15.978781Z"}
+{"event": "Detecting patterns in 50 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:16.070913Z"}
+{"event": "Detected 60 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:16.127989Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:37.061115Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:37.062114Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:37.062114Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:37.062114Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T01:18:37.062114Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:37.070217Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:37.070217Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:37.070217Z"}
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T01:18:37.071219Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T01:18:37.071219Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T01:18:37.071219Z"}
+{"event": "Detecting patterns in 50 evaluation results", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:37.152450Z"}
+{"event": "Detected 60 failure patterns", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T01:18:37.189113Z"}

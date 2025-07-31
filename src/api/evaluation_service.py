@@ -23,10 +23,19 @@ from ..models.evaluation_models import (
     EvaluationConfig,
     ExtractionStatus
 )
+from ..models.feedback_models import (
+    UserFeedbackRecord,
+    FeedbackStatistics,
+    FeedbackAggregation,
+    FeedbackTrend,
+    FeedbackAlert,
+    FeedbackOptimizationRecommendation
+)
 from ..evaluators.field_evaluator import FieldEvaluator
 from ..evaluators.document_aggregator import DocumentAggregator
 from ..evaluators.error_pattern_detector import ErrorPatternDetector
 from ..statistics.statistics_engine import StatisticsEngine
+from ..feedback.feedback_collector import FeedbackCollector
 from ..utils.config import get_config
 from ..utils.logging import get_logger
 
@@ -51,6 +60,7 @@ app.add_middleware(
 # Global state
 statistics_engine = StatisticsEngine()
 evaluation_config = EvaluationConfig()
+feedback_collector = FeedbackCollector()
 
 
 class DocumentExtractionEvaluator:
@@ -418,8 +428,176 @@ async def root():
             "performance": "/performance-metrics",
             "field_performance": "/field-performance",
             "optimize": "/optimize",
+            "feedback": "/feedback",
+            "feedback_stats": "/feedback/stats",
+            "feedback_aggregation": "/feedback/aggregation",
+            "feedback_trends": "/feedback/trends",
+            "feedback_alerts": "/feedback/alerts",
+            "feedback_recommendations": "/feedback/recommendations",
             "health": "/health",
             "config": "/config"
         },
         "documentation": "/docs"
-    } 
+    }
+
+
+# Feedback Collection Endpoints
+
+@app.post("/feedback", response_model=UserFeedbackRecord)
+async def collect_user_feedback(feedback_data: dict):
+    """
+    Collect user feedback for document extraction results.
+    
+    This endpoint accepts user feedback on extracted fields and stores it
+    for analysis and optimization recommendations.
+    """
+    
+    try:
+        feedback_record = feedback_collector.collect_feedback(feedback_data)
+        return feedback_record
+    except ValidationError as e:
+        raise HTTPException(status_code=400, detail=f"Validation error: {str(e)}")
+    except Exception as e:
+        logger.error(f"Feedback collection error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback collection failed: {str(e)}")
+
+
+@app.get("/feedback/stats", response_model=FeedbackStatistics)
+async def get_feedback_statistics():
+    """Get overall feedback statistics."""
+    
+    try:
+        return feedback_collector.get_feedback_statistics()
+    except Exception as e:
+        logger.error(f"Feedback statistics error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback statistics failed: {str(e)}")
+
+
+@app.get("/feedback/aggregation")
+async def get_feedback_aggregation(
+    field_name: Optional[str] = None,
+    prompt_version: Optional[str] = None,
+    document_type: Optional[str] = None,
+    time_period: Optional[str] = None
+):
+    """
+    Get aggregated feedback statistics with optional filtering.
+    
+    Args:
+        field_name: Filter by specific field
+        prompt_version: Filter by prompt version
+        document_type: Filter by document type
+        time_period: Filter by time period (e.g., "7d", "30d")
+    """
+    
+    try:
+        aggregations = feedback_collector.get_feedback_aggregation(
+            field_name=field_name,
+            prompt_version=prompt_version,
+            document_type=document_type,
+            time_period=time_period
+        )
+        
+        return {
+            "aggregations": [agg.dict() for agg in aggregations],
+            "total_aggregations": len(aggregations),
+            "filters": {
+                "field_name": field_name,
+                "prompt_version": prompt_version,
+                "document_type": document_type,
+                "time_period": time_period
+            }
+        }
+    except Exception as e:
+        logger.error(f"Feedback aggregation error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback aggregation failed: {str(e)}")
+
+
+@app.get("/feedback/trends")
+async def get_feedback_trends(
+    field_name: Optional[str] = None,
+    time_period: str = "7d"
+):
+    """
+    Get feedback trends over time.
+    
+    Args:
+        field_name: Filter by specific field
+        time_period: Time period for trends (e.g., "7d", "30d")
+    """
+    
+    try:
+        trends = feedback_collector.get_feedback_trends(
+            field_name=field_name,
+            time_period=time_period
+        )
+        
+        return {
+            "trends": [trend.dict() for trend in trends],
+            "total_trends": len(trends),
+            "filters": {
+                "field_name": field_name,
+                "time_period": time_period
+            }
+        }
+    except Exception as e:
+        logger.error(f"Feedback trends error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback trends failed: {str(e)}")
+
+
+@app.get("/feedback/alerts")
+async def get_feedback_alerts():
+    """Get currently active feedback alerts."""
+    
+    try:
+        alerts = feedback_collector.get_active_alerts()
+        
+        return {
+            "alerts": [alert.dict() for alert in alerts],
+            "total_alerts": len(alerts),
+            "alert_types": {
+                "high_error_rate": "High error rate for a field",
+                "accuracy_drop": "Significant drop in accuracy",
+                "feedback_spike": "Unusual increase in feedback volume"
+            }
+        }
+    except Exception as e:
+        logger.error(f"Feedback alerts error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback alerts failed: {str(e)}")
+
+
+@app.get("/feedback/recommendations")
+async def get_feedback_recommendations():
+    """Get optimization recommendations based on user feedback."""
+    
+    try:
+        recommendations = feedback_collector.get_optimization_recommendations()
+        
+        return {
+            "recommendations": [rec.dict() for rec in recommendations],
+            "total_recommendations": len(recommendations),
+            "recommendation_types": {
+                "prompt_clarification": "Clarify ambiguous prompts",
+                "format_standardization": "Standardize field formats",
+                "validation_improvement": "Improve validation rules"
+            }
+        }
+    except Exception as e:
+        logger.error(f"Feedback recommendations error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback recommendations failed: {str(e)}")
+
+
+@app.post("/feedback/reset")
+async def reset_feedback_data():
+    """Reset all feedback data (for testing purposes)."""
+    
+    try:
+        feedback_collector.reset_feedback()
+        
+        return {
+            "message": "Feedback data reset successfully",
+            "timestamp": datetime.now().isoformat()
+        }
+    except Exception as e:
+        logger.error(f"Feedback reset error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Feedback reset failed: {str(e)}") 
