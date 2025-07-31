@@ -98,7 +98,8 @@ class ErrorPatternDetector:
                         'field_eval': field_eval,
                         'document_id': result.document_id,
                         'document_type': result.document_type,
-                        'prompt_version': result.prompt_version
+                        'prompt_version': result.prompt_version,
+                        'document_timestamp': result.evaluation_timestamp
                     })
         
         if not failed_evaluations:
@@ -151,8 +152,8 @@ class ErrorPatternDetector:
                     frequency=len(evaluations),
                     impact_score=self._calculate_impact_score(evaluations),
                     suggested_fixes=self._generate_field_fixes(field_name, evaluations),
-                    first_seen=min(e['field_eval'].evaluation_timestamp for e in evaluations),
-                    last_seen=max(e['field_eval'].evaluation_timestamp for e in evaluations)
+                    first_seen=min(e['document_timestamp'] for e in evaluations),
+                    last_seen=max(e['document_timestamp'] for e in evaluations)
                 )
                 patterns.append(pattern)
         
@@ -175,15 +176,15 @@ class ErrorPatternDetector:
         for pattern_type, evaluations in error_groups.items():
             if len(evaluations) >= 2:  # Minimum threshold
                 pattern = FailurePattern(
-                    pattern_id=f"error_pattern_{pattern_type}_{datetime.now().isoformat()}",
-                    pattern_type=pattern_type,
+                    pattern_id=f"error_message_{pattern_type}_{datetime.now().isoformat()}",
+                    pattern_type=f"error_message_{pattern_type}",
                     affected_fields=list(set(e['field_eval'].field_name for e in evaluations)),
                     error_messages=self._extract_error_messages(evaluations),
                     frequency=len(evaluations),
                     impact_score=self._calculate_impact_score(evaluations),
                     suggested_fixes=self._generate_error_fixes(pattern_type, evaluations),
-                    first_seen=min(e['field_eval'].evaluation_timestamp for e in evaluations),
-                    last_seen=max(e['field_eval'].evaluation_timestamp for e in evaluations)
+                    first_seen=min(e['document_timestamp'] for e in evaluations),
+                    last_seen=max(e['document_timestamp'] for e in evaluations)
                 )
                 patterns.append(pattern)
         
@@ -209,8 +210,8 @@ class ErrorPatternDetector:
                     frequency=len(evaluations),
                     impact_score=self._calculate_impact_score(evaluations),
                     suggested_fixes=self._generate_doc_type_fixes(doc_type, evaluations),
-                    first_seen=min(e['field_eval'].evaluation_timestamp for e in evaluations),
-                    last_seen=max(e['field_eval'].evaluation_timestamp for e in evaluations)
+                    first_seen=min(e['document_timestamp'] for e in evaluations),
+                    last_seen=max(e['document_timestamp'] for e in evaluations)
                 )
                 patterns.append(pattern)
         
@@ -239,8 +240,8 @@ class ErrorPatternDetector:
                     "Add more context to the prompt",
                     "Consider field-specific examples"
                 ],
-                first_seen=min(e['field_eval'].evaluation_timestamp for e in low_confidence),
-                last_seen=max(e['field_eval'].evaluation_timestamp for e in low_confidence)
+                first_seen=min(e['document_timestamp'] for e in low_confidence),
+                last_seen=max(e['document_timestamp'] for e in low_confidence)
             )
             patterns.append(pattern)
         
@@ -258,8 +259,8 @@ class ErrorPatternDetector:
                     "Improve validation logic",
                     "Add more specific field definitions"
                 ],
-                first_seen=min(e['field_eval'].evaluation_timestamp for e in high_confidence_failures),
-                last_seen=max(e['field_eval'].evaluation_timestamp for e in high_confidence_failures)
+                first_seen=min(e['document_timestamp'] for e in high_confidence_failures),
+                last_seen=max(e['document_timestamp'] for e in high_confidence_failures)
             )
             patterns.append(pattern)
         
@@ -288,8 +289,8 @@ class ErrorPatternDetector:
                         frequency=len(evaluations),
                         impact_score=self._calculate_impact_score(evaluations),
                         suggested_fixes=self._generate_value_pattern_fixes(field_type, evaluations),
-                        first_seen=min(e['field_eval'].evaluation_timestamp for e in evaluations),
-                        last_seen=max(e['field_eval'].evaluation_timestamp for e in evaluations)
+                        first_seen=min(e['document_timestamp'] for e in evaluations),
+                        last_seen=max(e['document_timestamp'] for e in evaluations)
                     )
                     patterns.append(pattern)
         

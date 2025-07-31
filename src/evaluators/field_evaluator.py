@@ -54,28 +54,32 @@ class FieldEvaluator:
             FieldEvaluationResult: Complete evaluation result for the field
         """
         
+        # Convert values to strings for consistency
+        expected_str = str(expected_value) if expected_value is not None else None
+        extracted_str = str(extracted_value) if extracted_value is not None else None
+        
         # Handle missing values
-        if expected_value is None and extracted_value is None:
+        if expected_str is None and extracted_str is None:
             return self._create_result(
-                field_name, expected_value, extracted_value, confidence_score,
+                field_name, expected_str, extracted_str, confidence_score,
                 field_type, 1.0, ExtractionStatus.SUCCESS, "Both values are None"
             )
         
-        if expected_value is None:
+        if expected_str is None:
             return self._create_result(
-                field_name, expected_value, extracted_value, confidence_score,
+                field_name, expected_str, extracted_str, confidence_score,
                 field_type, 0.0, ExtractionStatus.FAILED, "Expected value is None"
             )
         
-        if extracted_value is None:
+        if extracted_str is None:
             return self._create_result(
-                field_name, expected_value, extracted_value, confidence_score,
-                field_type, 0.0, ExtractionStatus.MISSING, "Extracted value is None"
+                field_name, expected_str, extracted_str, confidence_score,
+                field_type, 0.0, ExtractionStatus.MISSING, "Field was not extracted"
             )
         
         # Normalize values for comparison
-        expected_norm = self._normalize_value(expected_value, field_type)
-        extracted_norm = self._normalize_value(extracted_value, field_type)
+        expected_norm = self._normalize_value(expected_str, field_type)
+        extracted_norm = self._normalize_value(extracted_str, field_type)
         
         # Calculate evaluation score
         evaluation_score = self._calculate_score(expected_norm, extracted_norm, field_type)
@@ -85,7 +89,7 @@ class FieldEvaluator:
         
         # Generate error message if needed
         error_message = self._generate_error_message(
-            expected_norm, extracted_norm, evaluation_score, status
+            expected_norm, extracted_norm, evaluation_score, status, confidence_score, self.config
         )
         
         # Create evaluation notes
@@ -94,7 +98,7 @@ class FieldEvaluator:
         )
         
         return self._create_result(
-            field_name, expected_value, extracted_value, confidence_score,
+            field_name, expected_str, extracted_str, confidence_score,
             field_type, evaluation_score, status, error_message, evaluation_notes
         )
     
@@ -109,6 +113,9 @@ class FieldEvaluator:
         Returns:
             str: Normalized value
         """
+        
+        if self.config.strict_matching:
+            return value  # No normalization in strict mode
         
         if not value:
             return ""
@@ -139,8 +146,8 @@ class FieldEvaluator:
             value_str = value_str.lower().strip()
         
         elif field_type == "phone":
-            # Normalize phone numbers
-            value_str = re.sub(r'[^\d+]', '', value_str)
+            # Normalize phone numbers - remove all non-digits for consistent comparison
+            value_str = re.sub(r'[^\d]', '', value_str)
         
         return value_str
     
@@ -155,12 +162,10 @@ class FieldEvaluator:
             str: Normalized date string
         """
         
-        # Common date patterns
+        # Common date patterns - assume MM/DD/YYYY for slash format
         patterns = [
             # MM/DD/YYYY
             (r'(\d{1,2})/(\d{1,2})/(\d{4})', r'\3-\1-\2'),
-            # DD/MM/YYYY
-            (r'(\d{1,2})/(\d{1,2})/(\d{4})', r'\3-\2-\1'),
             # MM-DD-YYYY
             (r'(\d{1,2})-(\d{1,2})-(\d{4})', r'\3-\1-\2'),
             # YYYY-MM-DD (already standard)
@@ -212,7 +217,7 @@ class FieldEvaluator:
         """Score text fields using string similarity."""
         
         if self.config.strict_matching:
-            return 0.0
+            return 1.0 if expected == extracted else 0.0
         
         # Use difflib for string similarity
         similarity = difflib.SequenceMatcher(None, expected, extracted).ratio()
@@ -301,13 +306,12 @@ class FieldEvaluator:
         if expected == extracted:
             return 1.0
         
-        # Check if they're the same number with different formatting
-        expected_digits = re.sub(r'[^\d]', '', expected)
-        extracted_digits = re.sub(r'[^\d]', '', extracted)
-        
-        if expected_digits == extracted_digits:
+        # Since phone normalization already removes non-digits,
+        # we can compare directly
+        if expected == extracted:
             return 0.9
         
+        # If they're not the same, fall back to text similarity
         return self._score_text(expected, extracted)
     
     def _determine_status(self, evaluation_score: float, confidence_score: float) -> ExtractionStatus:
@@ -326,8 +330,12 @@ class FieldEvaluator:
         if confidence_score < self.config.confidence_threshold:
             return ExtractionStatus.FAILED
         
+        # If score is 0.0, always failed
+        if evaluation_score == 0.0:
+            return ExtractionStatus.FAILED
+        
         # Determine status based on evaluation score
-        if evaluation_score >= self.config.success_threshold:
+        if evaluation_score > self.config.success_threshold:
             return ExtractionStatus.SUCCESS
         elif evaluation_score >= self.config.partial_threshold:
             return ExtractionStatus.PARTIAL
@@ -338,7 +346,9 @@ class FieldEvaluator:
                                expected: str,
                                extracted: str,
                                evaluation_score: float,
-                               status: ExtractionStatus) -> Optional[str]:
+                               status: ExtractionStatus,
+                               confidence_score: float = None,
+                               config = None) -> Optional[str]:
         """Generate error message for failed extractions."""
         
         if status == ExtractionStatus.SUCCESS:
@@ -348,10 +358,17 @@ class FieldEvaluator:
             return "Field was not extracted"
         
         if status == ExtractionStatus.FAILED:
+            # If the score is perfect but confidence is low, do not generate an error message
+            if evaluation_score == 1.0 and confidence_score is not None and config is not None:
+                if confidence_score < config.confidence_threshold:
+                    return None
             if evaluation_score == 0.0:
                 return "Complete mismatch between expected and extracted values"
             else:
                 return f"Partial match with score {evaluation_score:.2f}"
+        
+        if status == ExtractionStatus.PARTIAL:
+            return f"Partial match with score {evaluation_score:.2f}"
         
         return None
     

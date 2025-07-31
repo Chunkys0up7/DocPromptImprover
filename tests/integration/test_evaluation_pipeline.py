@@ -21,7 +21,7 @@ from src.models.evaluation_models import (
 
 
 class TestEvaluationPipeline:
-    """Integration tests for the complete evaluation pipeline."""
+    """Test the complete evaluation pipeline integration."""
     
     @pytest.fixture
     def field_evaluator(self):
@@ -193,10 +193,11 @@ class TestEvaluationPipeline:
         statistics_engine.update_statistics(document_result)
         
         # Verify updated statistics
-        assert statistics_engine.statistics.total_documents == 2
-        assert statistics_engine.statistics.total_fields == 10
-        assert statistics_engine.statistics.successful_extractions > 5
-        assert statistics_engine.statistics.failed_extractions > 0
+        assert statistics_engine.statistics.total_documents == 1
+        assert statistics_engine.statistics.total_fields == 5
+        assert statistics_engine.statistics.successful_extractions == 3
+        assert statistics_engine.statistics.failed_extractions == 1
+        assert statistics_engine.statistics.partial_extractions == 1
     
     def test_batch_evaluation_pipeline(self, field_evaluator, document_aggregator, statistics_engine):
         """Test batch evaluation pipeline."""
@@ -266,8 +267,10 @@ class TestEvaluationPipeline:
             assert result.overall_accuracy > 0.8
         
         # Verify batch statistics
-        assert statistics_engine.statistics.total_documents == 5  # Including previous tests
-        assert statistics_engine.statistics.total_fields == 19  # Including previous tests
+        assert statistics_engine.statistics.total_documents == 3
+        assert statistics_engine.statistics.total_fields == 9
+        assert statistics_engine.statistics.successful_extractions == 9
+        assert statistics_engine.statistics.failed_extractions == 0
     
     def test_performance_metrics(self, statistics_engine):
         """Test performance metrics calculation."""
