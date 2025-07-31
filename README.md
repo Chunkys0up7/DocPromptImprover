@@ -2,7 +2,14 @@
 
 ## 🎯 Overview
 
-This is an **evaluation-only microservice** that assesses the outputs of existing OCR-plus-prompt pipelines and provides data-driven feedback for prompt optimization. The framework is completely decoupled from upstream OCR systems and focuses on metrics, statistics, and continuous improvement.
+This is an **evaluation-only microservice** that assesses the outputs of existing OCR-plus-prompt pipelines using **pure statistical analysis**. The framework is completely decoupled from upstream OCR systems and focuses on metrics, statistics, and data-driven insights for manual prompt improvement.
+
+**Key Features:**
+- 🔍 **Statistical Evaluation**: Rule-based scoring algorithms for different field types
+- 📊 **Performance Analysis**: Comprehensive metrics and trend analysis
+- 🎯 **Pattern Detection**: Automated identification of failure patterns
+- 📈 **Data-Driven Insights**: Actionable recommendations for prompt improvement
+- 🚫 **No LLM Dependencies**: Pure statistical analysis without AI/ML requirements
 
 ## ✅ Implementation Status
 
@@ -38,10 +45,11 @@ This is an **evaluation-only microservice** that assesses the outputs of existin
 | Component | Purpose | Technology |
 |-----------|---------|------------|
 | **Ingestion Layer** | Parse evaluation inputs | Pydantic models |
-| **Field Evaluator** | Score individual fields | DSPy modules |
-| **Document Aggregator** | Combine field scores | DSPy metrics |
+| **Field Evaluator** | Score individual fields | Statistical algorithms |
+| **Document Aggregator** | Combine field scores | Statistical metrics |
 | **Statistics Store** | Persist evaluation data | Database + Pydantic |
-| **Optimization Engine** | Generate prompt improvements | DSPy optimizers |
+| **Pattern Detector** | Identify failure patterns | Statistical analysis |
+| **Recommendation Engine** | Generate improvement suggestions | Rule-based analysis |
 
 ## 📁 Project Structure
 
