@@ -600,4 +600,17 @@ async def reset_feedback_data():
         }
     except Exception as e:
         logger.error(f"Feedback reset error: {str(e)}")
-        raise HTTPException(status_code=500, detail=f"Feedback reset failed: {str(e)}") 
+        raise HTTPException(status_code=500, detail=f"Feedback reset failed: {str(e)}")
+
+
+if __name__ == "__main__":
+    import uvicorn
+    
+    logger.info("Starting Document Extraction Evaluation Service...")
+    uvicorn.run(
+        "src.api.evaluation_service:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True,
+        log_level="info"
+    ) 

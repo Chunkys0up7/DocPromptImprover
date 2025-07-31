@@ -121,6 +121,7 @@ class FeedbackOptimizationRecommendation(BaseModel):
     priority: str = Field(..., description="Priority level (low, medium, high, critical)")
     affected_prompt_versions: List[str] = Field(..., description="Prompt versions affected")
     generated_at: datetime = Field(default_factory=datetime.now, description="When recommendation was generated")
+    status: str = Field(default="active", description="Recommendation status (active, implemented, dismissed)")
 
 
 class FeedbackStatistics(BaseModel):

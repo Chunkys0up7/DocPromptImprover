@@ -14,6 +14,18 @@ This is an **evaluation-only microservice** that assesses the outputs of existin
 - 📈 **Trend Analysis**: Track performance changes over time
 - 🚫 **No LLM Dependencies**: Pure statistical analysis without AI/ML requirements
 
+## 🚀 Quick Start Demo
+
+**Want to see it in action?** Check out our comprehensive demo guide:
+
+📖 **[DEMO_GUIDE.md](DEMO_GUIDE.md)** - Complete step-by-step instructions to run the feedback API demo with visualization
+
+**Demo Features:**
+- ✅ **Interactive Dashboard** - Web-based visualization with Streamlit
+- ✅ **API Test Suite** - Programmatic demonstration of all endpoints
+- ✅ **Real-time Statistics** - Live feedback analysis and alerts
+- ✅ **Sample Data Generation** - Realistic test data for demonstration
+
 ## ✅ Implementation Status
 
 **🎉 ALL PHASES COMPLETED!** The evaluation framework is now fully implemented and ready for production use.

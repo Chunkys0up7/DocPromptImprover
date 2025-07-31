@@ -95,6 +95,7 @@ class TestFeedbackCollector:
         feedback_data_2 = self.sample_feedback_data.copy()
         feedback_data_2["document_id"] = "doc_124"
         feedback_data_2["field_feedback"][0]["feedback_status"] = "incorrect"
+        feedback_data_2["field_feedback"][0]["correction"] = "INV-2024-002"  # Add correction for incorrect status
         self.collector.collect_feedback(feedback_data_2)
         
         aggregations = self.collector.get_feedback_aggregation()
@@ -155,6 +156,7 @@ class TestFeedbackCollector:
             feedback_data = self.sample_feedback_data.copy()
             feedback_data["document_id"] = f"doc_{i}"
             feedback_data["field_feedback"][0]["feedback_status"] = "incorrect"
+            feedback_data["field_feedback"][0]["correction"] = f"INV-2024-{i:03d}"  # Add correction for incorrect status
             self.collector.collect_feedback(feedback_data)
         
         alerts = self.collector.get_active_alerts()
@@ -172,6 +174,7 @@ class TestFeedbackCollector:
             feedback_data = self.sample_feedback_data.copy()
             feedback_data["document_id"] = f"doc_{i}"
             feedback_data["field_feedback"][0]["feedback_status"] = "incorrect"
+            feedback_data["field_feedback"][0]["correction"] = f"INV-2024-{i:03d}"  # Add correction for incorrect status
             feedback_data["field_feedback"][0]["reason_code"] = "prompt_ambiguous"
             self.collector.collect_feedback(feedback_data)
         
