@@ -1,8 +1,8 @@
 """
-Utility functions for the DSPy-Pydantic document processing system.
+Utility functions for the evaluation-only framework.
 
 This module contains configuration management, logging setup, and other
-utility functions used throughout the system.
+utility functions used throughout the statistical evaluation system.
 """
 
 from .config import (
@@ -10,22 +10,18 @@ from .config import (
     get_settings,
     validate_config,
     update_config,
-    get_api_key,
     is_development_mode,
-    get_allowed_extensions,
-    get_optimization_config,
-    get_quality_control_config
+    get_data_directory,
+    get_results_directory,
+    get_temp_directory,
+    get_log_directory
 )
 
 from .logging import (
     get_logger,
     setup_logging,
     DocumentProcessingLogger,
-    MetricsLogger,
-    get_processing_logger,
-    get_metrics_logger,
-    create_processing_logger,
-    create_metrics_logger
+    MetricsLogger
 )
 
 __all__ = [
@@ -34,19 +30,15 @@ __all__ = [
     "get_settings", 
     "validate_config",
     "update_config",
-    "get_api_key",
     "is_development_mode",
-    "get_allowed_extensions",
-    "get_optimization_config",
-    "get_quality_control_config",
+    "get_data_directory",
+    "get_results_directory",
+    "get_temp_directory",
+    "get_log_directory",
     
     # Logging
     "get_logger",
     "setup_logging",
     "DocumentProcessingLogger",
-    "MetricsLogger", 
-    "get_processing_logger",
-    "get_metrics_logger",
-    "create_processing_logger",
-    "create_metrics_logger"
+    "MetricsLogger"
 ] 

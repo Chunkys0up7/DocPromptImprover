@@ -2,8 +2,8 @@
 Evaluation-Only Framework for Prompt-Driven Document Extraction.
 
 This package provides a lightweight, decoupled evaluation service that assesses
-the outputs of existing OCR-plus-prompt pipelines and provides data-driven
-feedback for prompt optimization.
+the outputs of existing OCR-plus-prompt pipelines using pure statistical analysis
+and provides data-driven feedback for prompt optimization.
 """
 
 __version__ = "1.0.0"
@@ -22,21 +22,14 @@ from .models.evaluation_models import (
     EvaluationConfig
 )
 
-# Evaluation signatures
-from .evaluators.evaluation_signatures import (
-    FieldEvaluationSignature,
-    DocumentAggregationSignature,
-    FailurePatternAnalysisSignature,
-    PromptOptimizationSignature,
-    ConfidenceCalibrationSignature,
-    ErrorCategorizationSignature,
-    PerformanceTrendAnalysisSignature,
-    QualityAssessmentSignature,
-    OptimizationFeedbackSignature,
-    get_evaluation_signature,
-    list_available_evaluation_signatures,
-    EVALUATION_SIGNATURE_REGISTRY
-)
+# Statistical evaluators
+from .evaluators.field_evaluator import FieldEvaluator
+from .evaluators.document_aggregator import DocumentAggregator
+from .evaluators.error_pattern_detector import ErrorPatternDetector
+from .evaluators.evaluation_signatures import StatisticalEvaluator
+
+# Statistics engine
+from .statistics.statistics_engine import StatisticsEngine
 
 # API service
 from .api.evaluation_service import (
@@ -76,19 +69,12 @@ __all__ = [
     "OptimizationRecommendation",
     "EvaluationConfig",
     
-    # Evaluation signatures
-    "FieldEvaluationSignature",
-    "DocumentAggregationSignature",
-    "FailurePatternAnalysisSignature",
-    "PromptOptimizationSignature",
-    "ConfidenceCalibrationSignature",
-    "ErrorCategorizationSignature",
-    "PerformanceTrendAnalysisSignature",
-    "QualityAssessmentSignature",
-    "OptimizationFeedbackSignature",
-    "get_evaluation_signature",
-    "list_available_evaluation_signatures",
-    "EVALUATION_SIGNATURE_REGISTRY",
+    # Statistical evaluators
+    "FieldEvaluator",
+    "DocumentAggregator",
+    "ErrorPatternDetector",
+    "StatisticalEvaluator",
+    "StatisticsEngine",
     
     # API service
     "DocumentExtractionEvaluator",

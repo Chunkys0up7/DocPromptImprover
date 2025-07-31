@@ -1,0 +1,7 @@
+{"event": "StatisticsEngine initialized", "logger": "src.statistics.statistics_engine", "level": "info", "timestamp": "2025-07-31T00:43:24.383239Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:43:24.383239Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:43:24.384258Z"}
+{"event": "ErrorPatternDetector initialized", "logger": "src.evaluators.error_pattern_detector", "level": "info", "timestamp": "2025-07-31T00:43:24.384258Z"}
+{"event": "DocumentExtractionEvaluator initialized with statistical analysis", "logger": "src.api.evaluation_service", "level": "info", "timestamp": "2025-07-31T00:43:24.384258Z"}
+{"event": "FieldEvaluator initialized with configuration", "logger": "src.evaluators.field_evaluator", "level": "info", "timestamp": "2025-07-31T00:43:24.387768Z"}
+{"event": "DocumentAggregator initialized", "logger": "src.evaluators.document_aggregator", "level": "info", "timestamp": "2025-07-31T00:43:24.387768Z"}

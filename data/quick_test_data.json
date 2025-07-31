@@ -1,0 +1,3776 @@
+{
+  "regular_evaluation_inputs": [
+    {
+      "document_id": "MEDICAL_RECORD-001",
+      "document_type": "medical_record",
+      "extracted_fields": {
+        "patient_name": "Charlie Davis",
+        "visit_date": "2024-01-29",
+        "diagnosis": "Invalid value",
+        "prescription": "Unknown",
+        "insurance_number": "INS-987-654-321"
+      },
+      "ground_truth": {
+        "patient_name": "Charlie Davis",
+        "patient_id": "P-2024-002",
+        "date_of_birth": "1975-09-30",
+        "visit_date": "2024-01-29",
+        "diagnosis": "Type 2 Diabetes",
+        "prescription": "Metformin 500mg twice daily",
+        "doctor_name": "Dr. Michael Johnson",
+        "insurance_number": "INS-987-654-321"
+      },
+      "confidence_scores": {
+        "patient_name": 0.7624136923374402,
+        "visit_date": 0.7591973887749265,
+        "diagnosis": 0.5414256758365733,
+        "prescription": 0.27864909264012094,
+        "insurance_number": 0.5034091042366172
+      },
+      "metadata": null,
+      "prompt_version": "v1.5",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "CONTRACT-002",
+      "document_type": "contract",
+      "extracted_fields": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "01/10/2024",
+        "expiration_date": "10-01-2025",
+        "client_name": "ABC Corporation",
+        "client_address": "123 Corporate Blvd, Business City, BC 12345",
+        "contract_value": "50000.00",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development Services"
+      },
+      "ground_truth": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "2024-01-10",
+        "expiration_date": "2025-01-10",
+        "client_name": "ABC Corporation",
+        "client_address": "123 Corporate Blvd, Business City, BC 12345",
+        "contract_value": "50000.00",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development Services"
+      },
+      "confidence_scores": {
+        "contract_number": 0.8317949893593604,
+        "contract_date": 0.6875089448492713,
+        "expiration_date": 0.8338799054558336,
+        "client_name": 0.8153052767441374,
+        "client_address": 0.7295722629072217,
+        "contract_value": 0.8016962610222116,
+        "payment_terms": 0.6125218513375728,
+        "service_description": 0.8439013500224661
+      },
+      "metadata": null,
+      "prompt_version": "v1.2",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "FORM-003",
+      "document_type": "form",
+      "extracted_fields": {
+        "applicant_name": "Bob Johnson",
+        "email": "bob.johnson@business.net",
+        "phone": "+1-555-456-7890",
+        "date_of_birth": "11/08/1978",
+        "ssn": "456-78-9012",
+        "address": "789 Pine St, Elsewhere, USA 67890",
+        "employment_status": "N/A",
+        "annual_income": "95000"
+      },
+      "ground_truth": {
+        "applicant_name": "Bob Johnson",
+        "email": "bob.johnson@business.net",
+        "phone": "+1-555-456-7890",
+        "date_of_birth": "1978-11-08",
+        "ssn": "456-78-9012",
+        "address": "789 Pine St, Elsewhere, USA 67890",
+        "employment_status": "Self-employed",
+        "annual_income": "95000"
+      },
+      "confidence_scores": {
+        "applicant_name": 0.5329728537955948,
+        "email": 0.818838900056821,
+        "phone": 0.762883178059689,
+        "date_of_birth": 0.7461792550778757,
+        "ssn": 0.7829052070875168,
+        "address": 0.8379618269616819,
+        "employment_status": 0.25118320978583014,
+        "annual_income": 0.6087695703653963
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "BANK_STATEMENT-004",
+      "document_type": "bank_statement",
+      "extracted_fields": {
+        "account_number": "1234-5678-9012-3456",
+        "statement_date": "January 31, 2024",
+        "opening_balance": "2500.00",
+        "closing_balance": "2875.50",
+        "total_deposits": "$1500.00",
+        "total_withdrawals": "$1124.50",
+        "bank_name": "First National Bank",
+        "account_holder": "John Doe"
+      },
+      "ground_truth": {
+        "account_number": "1234-5678-9012-3456",
+        "statement_date": "2024-01-31",
+        "opening_balance": "2500.00",
+        "closing_balance": "2875.50",
+        "total_deposits": "1500.00",
+        "total_withdrawals": "1124.50",
+        "bank_name": "First National Bank",
+        "account_holder": "John Doe"
+      },
+      "confidence_scores": {
+        "account_number": 0.8237301756917975,
+        "statement_date": 0.7301758272348262,
+        "opening_balance": 0.5653677173491655,
+        "closing_balance": 0.6452766513793675,
+        "total_deposits": 0.7602498209860895,
+        "total_withdrawals": 0.774973695442712,
+        "bank_name": 0.7798496584524259,
+        "account_holder": 0.6080678487918814
+      },
+      "metadata": null,
+      "prompt_version": "v1.4",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "RECEIPT-005",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "N/A",
+        "transaction_date": "01/25/2024",
+        "total_amount": "12,75",
+        "payment_method": "Credit Card",
+        "merchant_address": "123 Coffee St, Downtown, City",
+        "tax_amount": "USD 1.02",
+        "subtotal": "$11.73"
+      },
+      "ground_truth": {
+        "merchant_name": "Coffee Shop",
+        "transaction_date": "2024-01-25",
+        "total_amount": "12.75",
+        "payment_method": "Credit Card",
+        "receipt_number": "RCP-001",
+        "merchant_address": "123 Coffee St, Downtown, City",
+        "tax_amount": "1.02",
+        "subtotal": "11.73"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.21564291938544078,
+        "transaction_date": 0.6447524742586502,
+        "total_amount": 0.8344592048341168,
+        "payment_method": 0.5410759511553865,
+        "merchant_address": 0.6654135268711651,
+        "tax_amount": 0.9057556416622108,
+        "subtotal": 0.8372012247255339
+      },
+      "metadata": null,
+      "prompt_version": "v1.3",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "RECEIPT-006",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "Grocery Store",
+        "transaction_date": "2024-01-26",
+        "total_amount": "45.30",
+        "payment_method": "Debit Card",
+        "receipt_number": "RCP-002",
+        "merchant_address": "456 Food Ave, Shopping Center",
+        "tax_amount": "3.620",
+        "subtotal": "41,68"
+      },
+      "ground_truth": {
+        "merchant_name": "Grocery Store",
+        "transaction_date": "2024-01-26",
+        "total_amount": "45.30",
+        "payment_method": "Debit Card",
+        "receipt_number": "RCP-002",
+        "merchant_address": "456 Food Ave, Shopping Center",
+        "tax_amount": "3.62",
+        "subtotal": "41.68"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.6446703352740388,
+        "transaction_date": 0.7233197703249649,
+        "total_amount": 0.938250938873336,
+        "payment_method": 0.5481498309104351,
+        "receipt_number": 0.5460833295262976,
+        "merchant_address": 0.7873704498043963,
+        "tax_amount": 0.8067846423990088,
+        "subtotal": 0.7366909828582068
+      },
+      "metadata": null,
+      "prompt_version": "v1.2",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "RECEIPT-007",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "N/A",
+        "transaction_date": "Invalid date",
+        "total_amount": "7897.00",
+        "payment_method": "N/A",
+        "merchant_address": "Error",
+        "tax_amount": "9321.00"
+      },
+      "ground_truth": {
+        "merchant_name": "Gas Station",
+        "transaction_date": "2024-01-27",
+        "total_amount": "35.00",
+        "payment_method": "Cash",
+        "receipt_number": "RCP-003",
+        "merchant_address": "789 Fuel Rd, Highway Exit",
+        "tax_amount": "2.80",
+        "subtotal": "32.20"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.19640308797572092,
+        "transaction_date": 0.8286105959859394,
+        "total_amount": 0.7022517678012964,
+        "payment_method": 0.23721807706331408,
+        "merchant_address": 0.293540222951427,
+        "tax_amount": 0.943415910808011
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "CONTRACT-008",
+      "document_type": "contract",
+      "extracted_fields": {
+        "contract_number": "CTR-2024-002",
+        "contract_date": "15-01-2024",
+        "expiration_date": "N/A",
+        "client_address": "Error",
+        "contract_value": "75000.00",
+        "payment_terms": "Net 45",
+        "service_description": "Consulting Services"
+      },
+      "ground_truth": {
+        "contract_number": "CTR-2024-002",
+        "contract_date": "2024-01-15",
+        "expiration_date": "2024-12-31",
+        "client_name": "XYZ Industries",
+        "client_address": "456 Industrial Park, Factory Town, FT 54321",
+        "contract_value": "75000.00",
+        "payment_terms": "Net 45",
+        "service_description": "Consulting Services"
+      },
+      "confidence_scores": {
+        "contract_number": 0.7958244970072913,
+        "contract_date": 0.6932763737167159,
+        "expiration_date": 0.21546454527909595,
+        "client_address": 0.22008346942763624,
+        "contract_value": 0.5613043254017346,
+        "payment_terms": 0.7207276632206518,
+        "service_description": 0.5051946300243195
+      },
+      "metadata": null,
+      "prompt_version": "v1.4",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "BANK_STATEMENT-009",
+      "document_type": "bank_statement",
+      "extracted_fields": {
+        "account_number": "Unknown",
+        "statement_date": "31-01-2024",
+        "opening_balance": "Not found",
+        "total_deposits": "2000.00",
+        "total_withdrawals": "2124.75",
+        "bank_name": "Unknown",
+        "account_holder": "Jane Smith"
+      },
+      "ground_truth": {
+        "account_number": "9876-5432-1098-7654",
+        "statement_date": "2024-01-31",
+        "opening_balance": "5000.00",
+        "closing_balance": "4875.25",
+        "total_deposits": "2000.00",
+        "total_withdrawals": "2124.75",
+        "bank_name": "City Bank",
+        "account_holder": "Jane Smith"
+      },
+      "confidence_scores": {
+        "account_number": 0.11095763966688217,
+        "statement_date": 0.8389647993902816,
+        "opening_balance": 0.14532948899470108,
+        "total_deposits": 0.9153865824768919,
+        "total_withdrawals": 0.7653199491107125,
+        "bank_name": 0.1491558237670347,
+        "account_holder": 0.7410767006748685
+      },
+      "metadata": null,
+      "prompt_version": "v1.2",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "BANK_STATEMENT-010",
+      "document_type": "bank_statement",
+      "extracted_fields": {
+        "account_number": "N/A",
+        "closing_balance": "N/A",
+        "total_withdrawals": "0.00",
+        "bank_name": "Unknown",
+        "account_holder": "Jane Smith"
+      },
+      "ground_truth": {
+        "account_number": "9876-5432-1098-7654",
+        "statement_date": "2024-01-31",
+        "opening_balance": "5000.00",
+        "closing_balance": "4875.25",
+        "total_deposits": "2000.00",
+        "total_withdrawals": "2124.75",
+        "bank_name": "City Bank",
+        "account_holder": "Jane Smith"
+      },
+      "confidence_scores": {
+        "account_number": 0.10001598655861549,
+        "closing_balance": 0.14053451735246286,
+        "total_withdrawals": 0.9344376313400878,
+        "bank_name": 0.2495029769286448,
+        "account_holder": 0.8405997560238782
+      },
+      "metadata": null,
+      "prompt_version": "v1.2",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "INVOICE-011",
+      "document_type": "invoice",
+      "extracted_fields": {
+        "vendor_name": "Invalid value",
+        "invoice_number": "Unknown",
+        "due_date": "2024/02/15",
+        "total_amount": "$1250.00",
+        "tax_amount": "N/A",
+        "subtotal": "999.99",
+        "vendor_address": "Invalid value",
+        "vendor_email": "N/A"
+      },
+      "ground_truth": {
+        "vendor_name": "Acme Corporation",
+        "invoice_number": "INV-2024-001",
+        "invoice_date": "2024-01-15",
+        "due_date": "2024-02-15",
+        "total_amount": "1250.00",
+        "tax_amount": "125.00",
+        "subtotal": "1125.00",
+        "vendor_address": "123 Business St, City, State 12345",
+        "vendor_email": "billing@acme.com",
+        "vendor_phone": "+1-555-123-4567"
+      },
+      "confidence_scores": {
+        "vendor_name": 0.7101860898471459,
+        "invoice_number": 0.25336668539478113,
+        "due_date": 0.880654461011135,
+        "total_amount": 0.7356187094208816,
+        "tax_amount": 0.2747053431858698,
+        "subtotal": 0.9284661701227304,
+        "vendor_address": 0.763455496677338,
+        "vendor_email": 0.2916243925172708
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "INVOICE-012",
+      "document_type": "invoice",
+      "extracted_fields": {
+        "vendor_name": "Tech Solutions Inc",
+        "invoice_number": "TSI-2024-005",
+        "invoice_date": "12/31/2099",
+        "tax_amount": "87,55",
+        "subtotal": "0.00",
+        "vendor_address": "Not found",
+        "vendor_email": "accounts@techsolutions.com",
+        "vendor_phone": "N/A"
+      },
+      "ground_truth": {
+        "vendor_name": "Tech Solutions Inc",
+        "invoice_number": "TSI-2024-005",
+        "invoice_date": "2024-01-20",
+        "due_date": "2024-02-20",
+        "total_amount": "875.50",
+        "tax_amount": "87.55",
+        "subtotal": "787.95",
+        "vendor_address": "456 Tech Ave, Silicon Valley, CA 94025",
+        "vendor_email": "accounts@techsolutions.com",
+        "vendor_phone": "+1-555-987-6543"
+      },
+      "confidence_scores": {
+        "vendor_name": 0.6420812035795924,
+        "invoice_number": 0.6597367564957668,
+        "invoice_date": 0.6981685772660776,
+        "tax_amount": 0.7666219243618674,
+        "subtotal": 0.8226025642949373,
+        "vendor_address": 0.19945607639145335,
+        "vendor_email": 0.8584824762078743,
+        "vendor_phone": 0.1828664824128003
+      },
+      "metadata": null,
+      "prompt_version": "v1.2",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "CONTRACT-013",
+      "document_type": "contract",
+      "extracted_fields": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "2024/01/10",
+        "expiration_date": "2025-01-10",
+        "client_name": "ABC Corporation",
+        "client_address": "123 Corporate Blvd, Business City, BC 12345",
+        "contract_value": "50000.00",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development Services"
+      },
+      "ground_truth": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "2024-01-10",
+        "expiration_date": "2025-01-10",
+        "client_name": "ABC Corporation",
+        "client_address": "123 Corporate Blvd, Business City, BC 12345",
+        "contract_value": "50000.00",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development Services"
+      },
+      "confidence_scores": {
+        "contract_number": 0.7019927086511113,
+        "contract_date": 0.7894762553439195,
+        "expiration_date": 0.6280601636221437,
+        "client_name": 0.567668276244692,
+        "client_address": 0.6032166363002968,
+        "contract_value": 0.6743745725871454,
+        "payment_terms": 0.5876585271723855,
+        "service_description": 0.549965763283872
+      },
+      "metadata": null,
+      "prompt_version": "v1.5",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "RECEIPT-014",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "Coffee Shop",
+        "transaction_date": "25-01-2024",
+        "total_amount": "$12.75",
+        "payment_method": "Credit Card",
+        "receipt_number": "RCP-001",
+        "merchant_address": "123 Coffee St, Downtown, City",
+        "tax_amount": "$1.02",
+        "subtotal": "$11.73"
+      },
+      "ground_truth": {
+        "merchant_name": "Coffee Shop",
+        "transaction_date": "2024-01-25",
+        "total_amount": "12.75",
+        "payment_method": "Credit Card",
+        "receipt_number": "RCP-001",
+        "merchant_address": "123 Coffee St, Downtown, City",
+        "tax_amount": "1.02",
+        "subtotal": "11.73"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.7215156151353894,
+        "transaction_date": 0.8633443172668395,
+        "total_amount": 0.7713058770356451,
+        "payment_method": 0.8294285193795565,
+        "receipt_number": 0.6506372621375056,
+        "merchant_address": 0.5903152669976729,
+        "tax_amount": 0.7953593510469792,
+        "subtotal": 0.8477889356718084
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "RECEIPT-015",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "Grocery Store",
+        "transaction_date": "01/26/2024",
+        "total_amount": "45.30",
+        "payment_method": "debit card",
+        "receipt_number": "RCP-002",
+        "merchant_address": "456 Food Ave, Shopping Center",
+        "tax_amount": "3.62",
+        "subtotal": "$41.68"
+      },
+      "ground_truth": {
+        "merchant_name": "Grocery Store",
+        "transaction_date": "2024-01-26",
+        "total_amount": "45.30",
+        "payment_method": "Debit Card",
+        "receipt_number": "RCP-002",
+        "merchant_address": "456 Food Ave, Shopping Center",
+        "tax_amount": "3.62",
+        "subtotal": "41.68"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.5151484647558489,
+        "transaction_date": 0.7882704789455262,
+        "total_amount": 0.8776434979829106,
+        "payment_method": 0.5948336316301486,
+        "receipt_number": 0.6158943604124616,
+        "merchant_address": 0.6160187745093941,
+        "tax_amount": 0.7439290888011975,
+        "subtotal": 0.7353644597194008
+      },
+      "metadata": null,
+      "prompt_version": "v1.3",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "MEDICAL_RECORD-016",
+      "document_type": "medical_record",
+      "extracted_fields": {
+        "patient_name": "Unknown",
+        "patient_id": "Invalid value",
+        "date_of_birth": "1975-09-30",
+        "diagnosis": "Type 2 Diabetes",
+        "prescription": "Error",
+        "doctor_name": "N/A",
+        "insurance_number": "Not found"
+      },
+      "ground_truth": {
+        "patient_name": "Charlie Davis",
+        "patient_id": "P-2024-002",
+        "date_of_birth": "1975-09-30",
+        "visit_date": "2024-01-29",
+        "diagnosis": "Type 2 Diabetes",
+        "prescription": "Metformin 500mg twice daily",
+        "doctor_name": "Dr. Michael Johnson",
+        "insurance_number": "INS-987-654-321"
+      },
+      "confidence_scores": {
+        "patient_name": 0.1382620003101014,
+        "patient_id": 0.7146170331641417,
+        "date_of_birth": 0.8213193024269454,
+        "diagnosis": 0.6480146183648028,
+        "prescription": 0.19472429753332784,
+        "doctor_name": 0.2545293179728334,
+        "insurance_number": 0.15366653051387197
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "MEDICAL_RECORD-017",
+      "document_type": "medical_record",
+      "extracted_fields": {
+        "patient_name": "Alice Wilson",
+        "patient_id": "P-2024-001",
+        "date_of_birth": "12-05-1982",
+        "visit_date": "12/31/2099",
+        "diagnosis": "Hypertension",
+        "prescription": "Lisinopril 10mg daily",
+        "doctor_name": "Dr. Sarah Brown",
+        "insurance_number": "INS-123-456-789"
+      },
+      "ground_truth": {
+        "patient_name": "Alice Wilson",
+        "patient_id": "P-2024-001",
+        "date_of_birth": "1982-05-12",
+        "visit_date": "2024-01-28",
+        "diagnosis": "Hypertension",
+        "prescription": "Lisinopril 10mg daily",
+        "doctor_name": "Dr. Sarah Brown",
+        "insurance_number": "INS-123-456-789"
+      },
+      "confidence_scores": {
+        "patient_name": 0.7364220410921103,
+        "patient_id": 0.6044570085082225,
+        "date_of_birth": 0.6380412349398423,
+        "visit_date": 0.6142349048237766,
+        "diagnosis": 0.5812690500212788,
+        "prescription": 0.5139353845712792,
+        "doctor_name": 0.702354147282021,
+        "insurance_number": 0.6733614755530473
+      },
+      "metadata": null,
+      "prompt_version": "v1.4",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "FORM-018",
+      "document_type": "form",
+      "extracted_fields": {
+        "applicant_name": "Bob Johnson",
+        "ssn": "N/A",
+        "address": "Unknown",
+        "employment_status": "Unknown",
+        "annual_income": "Not found"
+      },
+      "ground_truth": {
+        "applicant_name": "Bob Johnson",
+        "email": "bob.johnson@business.net",
+        "phone": "+1-555-456-7890",
+        "date_of_birth": "1978-11-08",
+        "ssn": "456-78-9012",
+        "address": "789 Pine St, Elsewhere, USA 67890",
+        "employment_status": "Self-employed",
+        "annual_income": "95000"
+      },
+      "confidence_scores": {
+        "applicant_name": 0.8343457889878582,
+        "ssn": 0.28282467070518835,
+        "address": 0.11082029027099836,
+        "employment_status": 0.2630027595626214,
+        "annual_income": 0.2613025824367319
+      },
+      "metadata": null,
+      "prompt_version": "v1.4",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "BANK_STATEMENT-019",
+      "document_type": "bank_statement",
+      "extracted_fields": {
+        "account_number": "9876-5432-1098-7654",
+        "opening_balance": "5000.00",
+        "closing_balance": "Unknown",
+        "total_withdrawals": "2124.75",
+        "bank_name": "City Bank"
+      },
+      "ground_truth": {
+        "account_number": "9876-5432-1098-7654",
+        "statement_date": "2024-01-31",
+        "opening_balance": "5000.00",
+        "closing_balance": "4875.25",
+        "total_deposits": "2000.00",
+        "total_withdrawals": "2124.75",
+        "bank_name": "City Bank",
+        "account_holder": "Jane Smith"
+      },
+      "confidence_scores": {
+        "account_number": 0.6276634525853866,
+        "opening_balance": 0.5484987297007219,
+        "closing_balance": 0.14019665544131985,
+        "total_withdrawals": 0.894186514337481,
+        "bank_name": 0.6647832175995679
+      },
+      "metadata": null,
+      "prompt_version": "v1.1",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "INVOICE-020",
+      "document_type": "invoice",
+      "extracted_fields": {
+        "vendor_name": "Tech Solutions Inc",
+        "invoice_number": "TSI-2024-005",
+        "invoice_date": "2024/01/20",
+        "due_date": "2024-02-20",
+        "total_amount": "Invalid amount",
+        "tax_amount": "$87.55",
+        "subtotal": "787,95",
+        "vendor_address": "Not found",
+        "vendor_email": "user@domain",
+        "vendor_phone": "+1-555-987-6543"
+      },
+      "ground_truth": {
+        "vendor_name": "Tech Solutions Inc",
+        "invoice_number": "TSI-2024-005",
+        "invoice_date": "2024-01-20",
+        "due_date": "2024-02-20",
+        "total_amount": "875.50",
+        "tax_amount": "87.55",
+        "subtotal": "787.95",
+        "vendor_address": "456 Tech Ave, Silicon Valley, CA 94025",
+        "vendor_email": "accounts@techsolutions.com",
+        "vendor_phone": "+1-555-987-6543"
+      },
+      "confidence_scores": {
+        "vendor_name": 0.5208266968010551,
+        "invoice_number": 0.7383644287807648,
+        "invoice_date": 0.6446974822415459,
+        "due_date": 0.8894294961739411,
+        "total_amount": 0.7109697842942357,
+        "tax_amount": 0.8982055179844577,
+        "subtotal": 0.7981750738845649,
+        "vendor_address": 0.22987651465549047,
+        "vendor_email": 0.8384224500449152,
+        "vendor_phone": 0.5088179097200327
+      },
+      "metadata": null,
+      "prompt_version": "v1.4",
+      "extraction_timestamp": null
+    }
+  ],
+  "edge_cases": [
+    {
+      "document_id": "EDGE-EMPTY-001",
+      "document_type": "invoice",
+      "extracted_fields": {},
+      "ground_truth": {
+        "vendor_name": "Test Vendor",
+        "total_amount": "100.00"
+      },
+      "confidence_scores": {},
+      "metadata": null,
+      "prompt_version": "v1.0",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "EDGE-MISSING-001",
+      "document_type": "receipt",
+      "extracted_fields": {
+        "merchant_name": "Test Merchant"
+      },
+      "ground_truth": {
+        "merchant_name": "Test Merchant",
+        "total_amount": "50.00",
+        "transaction_date": "2024-01-01"
+      },
+      "confidence_scores": {
+        "merchant_name": 0.9
+      },
+      "metadata": null,
+      "prompt_version": "v1.0",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "EDGE-LOW-CONF-001",
+      "document_type": "form",
+      "extracted_fields": {
+        "applicant_name": "John Doe",
+        "email": "john@email.com",
+        "phone": "555-123-4567"
+      },
+      "ground_truth": {
+        "applicant_name": "John Doe",
+        "email": "john@email.com",
+        "phone": "555-123-4567"
+      },
+      "confidence_scores": {
+        "applicant_name": 0.1,
+        "email": 0.05,
+        "phone": 0.15
+      },
+      "metadata": null,
+      "prompt_version": "v1.0",
+      "extraction_timestamp": null
+    },
+    {
+      "document_id": "EDGE-MIXED-001",
+      "document_type": "contract",
+      "extracted_fields": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "01/15/2024",
+        "client_name": "ABC Corp",
+        "contract_value": "50000",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development"
+      },
+      "ground_truth": {
+        "contract_number": "CTR-2024-001",
+        "contract_date": "2024-01-15",
+        "client_name": "ABC Corporation",
+        "contract_value": "50000.00",
+        "payment_terms": "Net 30",
+        "service_description": "Software Development Services"
+      },
+      "confidence_scores": {
+        "contract_number": 0.95,
+        "contract_date": 0.8,
+        "client_name": 0.7,
+        "contract_value": 0.85,
+        "payment_terms": 0.9,
+        "service_description": 0.75
+      },
+      "metadata": null,
+      "prompt_version": "v1.0",
+      "extraction_timestamp": null
+    }
+  ],
+  "evaluation_results": [
+    {
+      "document_id": "FORM-001",
+      "document_type": "form",
+      "field_evaluations": [
+        {
+          "field_name": "phone",
+          "expected_value": "+1-555-456-7890",
+          "extracted_value": "+1-555-456-7890",
+          "confidence_score": 0.5190714160085466,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.519",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "address",
+          "expected_value": "789 Pine St, Elsewhere, USA 67890",
+          "extracted_value": "789 Pine St, Elsewhere, USA 67890",
+          "confidence_score": 0.7014524298969269,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.701",
+          "field_type": "text"
+        },
+        {
+          "field_name": "ssn",
+          "expected_value": "456-78-9012",
+          "extracted_value": "456-78-9012",
+          "confidence_score": 0.5223870297044554,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.522",
+          "field_type": "text"
+        },
+        {
+          "field_name": "annual_income",
+          "expected_value": "95000",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.8023115958389448,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.802; Expected: '95000'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "applicant_name",
+          "expected_value": "Bob Johnson",
+          "extracted_value": "Bob Johnson",
+          "confidence_score": 0.8180546352123785,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.818",
+          "field_type": "text"
+        },
+        {
+          "field_name": "date_of_birth",
+          "expected_value": "1978-11-08",
+          "extracted_value": "08-11-1978",
+          "confidence_score": 0.7993208848990615,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.799; Expected: '1978-11-08'; Extracted: '1978-08-11'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "employment_status",
+          "expected_value": "Self-employed",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.717792950401782,
+          "status": "failed",
+          "evaluation_score": 0.07692307692307693,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.077; Confidence score: 0.718; Expected: 'self-employed'; Extracted: 'invalid value'; String similarity: 0.077",
+          "field_type": "text"
+        },
+        {
+          "field_name": "email",
+          "expected_value": "bob.johnson@business.net",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "email"
+        }
+      ],
+      "overall_accuracy": 0.5096153846153846,
+      "confidence_correlation": 0.0,
+      "evaluation_timestamp": "2025-07-30 20:43:24.524607",
+      "prompt_version": "v1.5",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 2,
+        "partial_fields": 0,
+        "failed_fields": 5,
+        "missing_fields": 1,
+        "success_rate": 0.25,
+        "failure_rate": 0.75,
+        "average_evaluation_score": 0.5096153846153846,
+        "average_confidence_score": 0.610048867745262,
+        "evaluation_score_std": 0.5248475204244457,
+        "confidence_score_std": 0.27363682044508275,
+        "field_types": [
+          "phone",
+          "date",
+          "email",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "phone",
+          "address",
+          "ssn",
+          "annual_income",
+          "applicant_name",
+          "date_of_birth",
+          "employment_status",
+          "email"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.524607"
+      }
+    },
+    {
+      "document_id": "FORM-002",
+      "document_type": "form",
+      "field_evaluations": [
+        {
+          "field_name": "phone",
+          "expected_value": "+1-555-123-4567",
+          "extracted_value": "+1-555-123-4567",
+          "confidence_score": 0.5760316935798586,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.576",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "ssn",
+          "expected_value": "123-45-6789",
+          "extracted_value": "N/A",
+          "confidence_score": 0.21285804078325082,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.213; Expected: '123-45-6789'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "address",
+          "expected_value": "123 Main St, Anytown, USA 12345",
+          "extracted_value": "123 Main St, Anytown, USA 12345",
+          "confidence_score": 0.8044734940939375,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.804",
+          "field_type": "text"
+        },
+        {
+          "field_name": "annual_income",
+          "expected_value": "75000",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "number"
+        },
+        {
+          "field_name": "applicant_name",
+          "expected_value": "John Doe",
+          "extracted_value": "John Doe",
+          "confidence_score": 0.8382412879761555,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.838",
+          "field_type": "text"
+        },
+        {
+          "field_name": "date_of_birth",
+          "expected_value": "1985-03-15",
+          "extracted_value": "12/31/2099",
+          "confidence_score": 0.740885605410506,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.741; Expected: '1985-03-15'; Extracted: '2099-12-31'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "employment_status",
+          "expected_value": "Full-time",
+          "extracted_value": "N/A",
+          "confidence_score": 0.19927935059653562,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.199; Expected: 'full-time'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "email",
+          "expected_value": "john.doe@email.com",
+          "extracted_value": "john.doe@email.com",
+          "confidence_score": 0.9536894702924474,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: email; Evaluation score: 1.000; Confidence score: 0.954",
+          "field_type": "email"
+        }
+      ],
+      "overall_accuracy": 0.5,
+      "confidence_correlation": 0.7201664051954932,
+      "evaluation_timestamp": "2025-07-30 20:43:24.524607",
+      "prompt_version": "v1.4",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 3,
+        "partial_fields": 0,
+        "failed_fields": 4,
+        "missing_fields": 1,
+        "success_rate": 0.375,
+        "failure_rate": 0.625,
+        "average_evaluation_score": 0.5,
+        "average_confidence_score": 0.5406823678415864,
+        "evaluation_score_std": 0.5345224838248488,
+        "confidence_score_std": 0.3558480975218174,
+        "field_types": [
+          "phone",
+          "date",
+          "email",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "phone",
+          "ssn",
+          "address",
+          "annual_income",
+          "applicant_name",
+          "date_of_birth",
+          "employment_status",
+          "email"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.524607"
+      }
+    },
+    {
+      "document_id": "INVOICE-003",
+      "document_type": "invoice",
+      "field_evaluations": [
+        {
+          "field_name": "tax_amount",
+          "expected_value": "210.00",
+          "extracted_value": "999.99",
+          "confidence_score": 0.7916050947501668,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.792; Expected: '210.00'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "vendor_email",
+          "expected_value": "finance@globalservices.com",
+          "extracted_value": "finance@globalservices.com",
+          "confidence_score": 0.963745473239231,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: email; Evaluation score: 1.000; Confidence score: 0.964",
+          "field_type": "email"
+        },
+        {
+          "field_name": "due_date",
+          "expected_value": "2024-03-01",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "date"
+        },
+        {
+          "field_name": "vendor_address",
+          "expected_value": "789 Global Blvd, International City, IC 12345",
+          "extracted_value": "Unknown",
+          "confidence_score": 0.12577372859566738,
+          "status": "failed",
+          "evaluation_score": 0.07692307692307693,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.077; Confidence score: 0.126; Expected: '789 global blvd, international city, ic 12345'; Extracted: 'unknown'; String similarity: 0.077",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "2100.00",
+          "extracted_value": "USD 2100.00",
+          "confidence_score": 0.7214208073321138,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.721",
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_number",
+          "expected_value": "GS-2024-012",
+          "extracted_value": "Not found",
+          "confidence_score": 0.19449947860214944,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.194; Expected: 'gs-2024-012'; Extracted: 'not found'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "vendor_phone",
+          "expected_value": "+1-555-456-7890",
+          "extracted_value": "+1-555-456-7890",
+          "confidence_score": 0.8354307234563294,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.835",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "vendor_name",
+          "expected_value": "Global Services Ltd",
+          "extracted_value": "Global Services Ltd",
+          "confidence_score": 0.5932630911086437,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.593",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "1890.00",
+          "extracted_value": "$1890.00",
+          "confidence_score": 0.7948569365921964,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.795",
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_date",
+          "expected_value": "2024-01-30",
+          "extracted_value": "00/00/0000",
+          "confidence_score": 0.7916191385205839,
+          "status": "partial",
+          "evaluation_score": 0.5,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.500; Confidence score: 0.792; Expected: '2024-01-30'; Extracted: '0000-00-00'",
+          "field_type": "date"
+        }
+      ],
+      "overall_accuracy": 0.5533498759305211,
+      "confidence_correlation": 0.6420347095503498,
+      "evaluation_timestamp": "2025-07-30 20:43:24.524607",
+      "prompt_version": "v1.5",
+      "evaluation_metadata": {
+        "total_fields": 10,
+        "successful_fields": 4,
+        "partial_fields": 1,
+        "failed_fields": 4,
+        "missing_fields": 1,
+        "success_rate": 0.4,
+        "failure_rate": 0.5,
+        "average_evaluation_score": 0.5576923076923077,
+        "average_confidence_score": 0.5812214472197081,
+        "evaluation_score_std": 0.48827474724466774,
+        "confidence_score_std": 0.3431425545134662,
+        "field_types": [
+          "phone",
+          "date",
+          "number",
+          "email",
+          "text"
+        ],
+        "field_names": [
+          "tax_amount",
+          "vendor_email",
+          "due_date",
+          "vendor_address",
+          "total_amount",
+          "invoice_number",
+          "vendor_phone",
+          "vendor_name",
+          "subtotal",
+          "invoice_date"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.524607"
+      }
+    },
+    {
+      "document_id": "CONTRACT-004",
+      "document_type": "contract",
+      "field_evaluations": [
+        {
+          "field_name": "client_name",
+          "expected_value": "XYZ Industries",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_value",
+          "expected_value": "75000.00",
+          "extracted_value": "75000.00",
+          "confidence_score": 0.817547118789578,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.818",
+          "field_type": "number"
+        },
+        {
+          "field_name": "client_address",
+          "expected_value": "456 Industrial Park, Factory Town, FT 54321",
+          "extracted_value": "Error",
+          "confidence_score": 0.2240533747716675,
+          "status": "failed",
+          "evaluation_score": 0.16666666666666666,
+          "error_message": "Partial match with score 0.17",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.167; Confidence score: 0.224; Expected: '456 industrial park, factory town, ft 54321'; Extracted: 'error'; String similarity: 0.167",
+          "field_type": "text"
+        },
+        {
+          "field_name": "expiration_date",
+          "expected_value": "2024-12-31",
+          "extracted_value": "December 31, 2024",
+          "confidence_score": 0.6867645698752096,
+          "status": "failed",
+          "evaluation_score": 0.2962962962962963,
+          "error_message": "Partial match with score 0.30",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.296; Confidence score: 0.687; Expected: '2024-12-31'; Extracted: 'december 31, 2024'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "contract_date",
+          "expected_value": "2024-01-15",
+          "extracted_value": "Invalid date",
+          "confidence_score": 0.7234412191285465,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.723; Expected: '2024-01-15'; Extracted: 'invalid date'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "service_description",
+          "expected_value": "Consulting Services",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_number",
+          "expected_value": "CTR-2024-002",
+          "extracted_value": "Not found",
+          "confidence_score": 0.2892124353862431,
+          "status": "failed",
+          "evaluation_score": 0.09523809523809523,
+          "error_message": "Partial match with score 0.10",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.095; Confidence score: 0.289; Expected: 'ctr-2024-002'; Extracted: 'not found'; String similarity: 0.095",
+          "field_type": "text"
+        },
+        {
+          "field_name": "payment_terms",
+          "expected_value": "Net 45",
+          "extracted_value": "Net 45",
+          "confidence_score": 0.5331493441502284,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.533",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.31977513227513227,
+      "confidence_correlation": 0.40406021330793584,
+      "evaluation_timestamp": "2025-07-30 20:43:24.525607",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 1,
+        "partial_fields": 0,
+        "failed_fields": 5,
+        "missing_fields": 2,
+        "success_rate": 0.125,
+        "failure_rate": 0.875,
+        "average_evaluation_score": 0.31977513227513227,
+        "average_confidence_score": 0.40927100776268416,
+        "evaluation_score_std": 0.43203678513832827,
+        "confidence_score_std": 0.32545922978088954,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "client_name",
+          "contract_value",
+          "client_address",
+          "expiration_date",
+          "contract_date",
+          "service_description",
+          "contract_number",
+          "payment_terms"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.525607"
+      }
+    },
+    {
+      "document_id": "RECEIPT-005",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Grocery Store",
+          "extracted_value": "Grocery Store",
+          "confidence_score": 0.7276799082259573,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.728",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "45.30",
+          "extracted_value": "999.99",
+          "confidence_score": 0.7740729365025902,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.774; Expected: '45.30'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-26",
+          "extracted_value": "26-01-2024",
+          "confidence_score": 0.729209718478858,
+          "status": "partial",
+          "evaluation_score": 0.7,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.700; Confidence score: 0.729; Expected: '2024-01-26'; Extracted: '2024-26-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-002",
+          "extracted_value": "N/A",
+          "confidence_score": 0.15280356704007056,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.153; Expected: 'rcp-002'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "3.62",
+          "extracted_value": "N/A",
+          "confidence_score": 0.22856689310863026,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.229; Expected: '3.62'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "456 Food Ave, Shopping Center",
+          "extracted_value": "Not found",
+          "confidence_score": 0.21392502623693466,
+          "status": "failed",
+          "evaluation_score": 0.21052631578947367,
+          "error_message": "Partial match with score 0.21",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.211; Confidence score: 0.214; Expected: '456 food ave, shopping center'; Extracted: 'not found'; String similarity: 0.211",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "41.68",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "number"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Debit Card",
+          "extracted_value": "Debit Card",
+          "confidence_score": 0.6553262956533693,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.655",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.3931174089068826,
+      "confidence_correlation": 0.6159655121908094,
+      "evaluation_timestamp": "2025-07-30 20:43:24.526111",
+      "prompt_version": "v1.1",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 1,
+        "partial_fields": 1,
+        "failed_fields": 5,
+        "missing_fields": 1,
+        "success_rate": 0.125,
+        "failure_rate": 0.75,
+        "average_evaluation_score": 0.3638157894736842,
+        "average_confidence_score": 0.4351980431558013,
+        "evaluation_score_std": 0.4591025251629544,
+        "confidence_score_std": 0.315341833707742,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "total_amount",
+          "transaction_date",
+          "receipt_number",
+          "tax_amount",
+          "merchant_address",
+          "subtotal",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.526111"
+      }
+    },
+    {
+      "document_id": "RECEIPT-006",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Grocery Store",
+          "extracted_value": "Not found",
+          "confidence_score": 0.22126211822362674,
+          "status": "failed",
+          "evaluation_score": 0.2727272727272727,
+          "error_message": "Partial match with score 0.27",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.273; Confidence score: 0.221; Expected: 'grocery store'; Extracted: 'not found'; String similarity: 0.273",
+          "field_type": "text"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-26",
+          "extracted_value": "Invalid date",
+          "confidence_score": 0.6833993156367569,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.683; Expected: '2024-01-26'; Extracted: 'invalid date'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "45.30",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "number"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-002",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "3.62",
+          "extracted_value": "9136.00",
+          "confidence_score": 0.9062131068015693,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.906; Expected: '3.62'; Extracted: '9136.00'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "456 Food Ave, Shopping Center",
+          "extracted_value": "456 Food Ave, Shopping Center",
+          "confidence_score": 0.6607367101497864,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.661",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "41.68",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "number"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Debit Card",
+          "extracted_value": "Unknown",
+          "confidence_score": 0.12582240089038496,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.126; Expected: 'debit card'; Extracted: 'unknown'; String similarity: 0.000",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.11888111888111888,
+      "confidence_correlation": 0.10423780108490069,
+      "evaluation_timestamp": "2025-07-30 20:43:24.526111",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 0,
+        "partial_fields": 0,
+        "failed_fields": 5,
+        "missing_fields": 3,
+        "success_rate": 0.0,
+        "failure_rate": 1.0,
+        "average_evaluation_score": 0.1590909090909091,
+        "average_confidence_score": 0.32467920646276555,
+        "evaluation_score_std": 0.35292670757665434,
+        "confidence_score_std": 0.3676732486371174,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "transaction_date",
+          "total_amount",
+          "receipt_number",
+          "tax_amount",
+          "merchant_address",
+          "subtotal",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.526111"
+      }
+    },
+    {
+      "document_id": "INVOICE-007",
+      "document_type": "invoice",
+      "field_evaluations": [
+        {
+          "field_name": "tax_amount",
+          "expected_value": "125.00",
+          "extracted_value": "$125.00",
+          "confidence_score": 0.7014083124455754,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.701",
+          "field_type": "number"
+        },
+        {
+          "field_name": "vendor_email",
+          "expected_value": "billing@acme.com",
+          "extracted_value": "billing@acme.com",
+          "confidence_score": 0.8695065454718687,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: email; Evaluation score: 1.000; Confidence score: 0.870",
+          "field_type": "email"
+        },
+        {
+          "field_name": "due_date",
+          "expected_value": "2024-02-15",
+          "extracted_value": "00/00/0000",
+          "confidence_score": 0.7121926774324008,
+          "status": "failed",
+          "evaluation_score": 0.4,
+          "error_message": "Partial match with score 0.40",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.400; Confidence score: 0.712; Expected: '2024-02-15'; Extracted: '0000-00-00'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "vendor_address",
+          "expected_value": "123 Business St, City, State 12345",
+          "extracted_value": "123 Business St, City, State 12345",
+          "confidence_score": 0.6019213332843428,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.602",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "1250.00",
+          "extracted_value": "1250,00",
+          "confidence_score": 0.9497596837840023,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.950; Expected: '1250.00'; Extracted: '125000'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_number",
+          "expected_value": "INV-2024-001",
+          "extracted_value": "INV-2024-001",
+          "confidence_score": 0.6975153018008621,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.698",
+          "field_type": "text"
+        },
+        {
+          "field_name": "vendor_phone",
+          "expected_value": "+1-555-123-4567",
+          "extracted_value": "+1-555-123-4567",
+          "confidence_score": 0.741835455828856,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.742",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "vendor_name",
+          "expected_value": "Acme Corporation",
+          "extracted_value": "Acme Corporation",
+          "confidence_score": 0.6554650494647594,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.655",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "1125.00",
+          "extracted_value": "999.99",
+          "confidence_score": 0.7779570704195387,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.778; Expected: '1125.00'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_date",
+          "expected_value": "2024-01-15",
+          "extracted_value": "2024/01/15",
+          "confidence_score": 0.7291548608542406,
+          "status": "success",
+          "evaluation_score": 0.8,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.800; Confidence score: 0.729; Expected: '2024-01-15'; Extracted: '2024/01/15'",
+          "field_type": "date"
+        }
+      ],
+      "overall_accuracy": 0.6903225806451613,
+      "confidence_correlation": 0.0,
+      "evaluation_timestamp": "2025-07-30 20:43:24.527115",
+      "prompt_version": "v1.1",
+      "evaluation_metadata": {
+        "total_fields": 10,
+        "successful_fields": 4,
+        "partial_fields": 0,
+        "failed_fields": 6,
+        "missing_fields": 0,
+        "success_rate": 0.4,
+        "failure_rate": 0.6,
+        "average_evaluation_score": 0.72,
+        "average_confidence_score": 0.7436716290786447,
+        "evaluation_score_std": 0.4237399621885521,
+        "confidence_score_std": 0.10136697795526713,
+        "field_types": [
+          "phone",
+          "date",
+          "number",
+          "email",
+          "text"
+        ],
+        "field_names": [
+          "tax_amount",
+          "vendor_email",
+          "due_date",
+          "vendor_address",
+          "total_amount",
+          "invoice_number",
+          "vendor_phone",
+          "vendor_name",
+          "subtotal",
+          "invoice_date"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.527115"
+      }
+    },
+    {
+      "document_id": "RECEIPT-008",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Gas Station",
+          "extracted_value": "Gas Station",
+          "confidence_score": 0.5511443110491966,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.551",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "35.00",
+          "extracted_value": "35.0",
+          "confidence_score": 0.871128645223294,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.871; Expected: '35.00'; Extracted: '35.0'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-27",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "date"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-003",
+          "extracted_value": "N/A",
+          "confidence_score": 0.11743761684349092,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.117; Expected: 'rcp-003'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "2.80",
+          "extracted_value": "999.99",
+          "confidence_score": 0.8880983672414814,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.888; Expected: '2.80'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "789 Fuel Rd, Highway Exit",
+          "extracted_value": "789 Fuel Rd, Highway Exit",
+          "confidence_score": 0.5607934482832131,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.561",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "32.20",
+          "extracted_value": "32,20",
+          "confidence_score": 0.9221545021915113,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.922; Expected: '32.20'; Extracted: '3220'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Cash",
+          "extracted_value": "Cash",
+          "confidence_score": 0.7246598638054822,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.725",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.5,
+      "confidence_correlation": 0.06457784876417606,
+      "evaluation_timestamp": "2025-07-30 20:43:24.527115",
+      "prompt_version": "v1.5",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 2,
+        "partial_fields": 0,
+        "failed_fields": 5,
+        "missing_fields": 1,
+        "success_rate": 0.25,
+        "failure_rate": 0.75,
+        "average_evaluation_score": 0.5,
+        "average_confidence_score": 0.5794270943297087,
+        "evaluation_score_std": 0.5345224838248488,
+        "confidence_score_std": 0.35238768149590316,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "total_amount",
+          "transaction_date",
+          "receipt_number",
+          "tax_amount",
+          "merchant_address",
+          "subtotal",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.527115"
+      }
+    },
+    {
+      "document_id": "MEDICAL_RECORD-009",
+      "document_type": "medical_record",
+      "field_evaluations": [
+        {
+          "field_name": "visit_date",
+          "expected_value": "2024-01-28",
+          "extracted_value": "12/31/2099",
+          "confidence_score": 0.7596019268597627,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.760; Expected: '2024-01-28'; Extracted: '2099-12-31'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "diagnosis",
+          "expected_value": "Hypertension",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.7650624211586261,
+          "status": "failed",
+          "evaluation_score": 0.08,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.080; Confidence score: 0.765; Expected: 'hypertension'; Extracted: 'invalid value'; String similarity: 0.080",
+          "field_type": "text"
+        },
+        {
+          "field_name": "doctor_name",
+          "expected_value": "Dr. Sarah Brown",
+          "extracted_value": "Not found",
+          "confidence_score": 0.28110835069432816,
+          "status": "failed",
+          "evaluation_score": 0.08333333333333333,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.083; Confidence score: 0.281; Expected: 'dr. sarah brown'; Extracted: 'not found'; String similarity: 0.083",
+          "field_type": "text"
+        },
+        {
+          "field_name": "insurance_number",
+          "expected_value": "INS-123-456-789",
+          "extracted_value": "Not found",
+          "confidence_score": 0.20481021033636332,
+          "status": "failed",
+          "evaluation_score": 0.08333333333333333,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.083; Confidence score: 0.205; Expected: 'ins-123-456-789'; Extracted: 'not found'; String similarity: 0.083",
+          "field_type": "text"
+        },
+        {
+          "field_name": "patient_id",
+          "expected_value": "P-2024-001",
+          "extracted_value": "Not found",
+          "confidence_score": 0.21656876617669596,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.217; Expected: 'p-2024-001'; Extracted: 'not found'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "date_of_birth",
+          "expected_value": "1982-05-12",
+          "extracted_value": "1982/05/12",
+          "confidence_score": 0.6811852914906655,
+          "status": "failed",
+          "evaluation_score": 0.8,
+          "error_message": "Partial match with score 0.80",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.800; Confidence score: 0.681; Expected: '1982-05-12'; Extracted: '1982/05/12'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "prescription",
+          "expected_value": "Lisinopril 10mg daily",
+          "extracted_value": "Error",
+          "confidence_score": 0.29434263570668145,
+          "status": "failed",
+          "evaluation_score": 0.15384615384615385,
+          "error_message": "Partial match with score 0.15",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.154; Confidence score: 0.294; Expected: 'lisinopril 10mg daily'; Extracted: 'error'; String similarity: 0.154",
+          "field_type": "text"
+        },
+        {
+          "field_name": "patient_name",
+          "expected_value": "Alice Wilson",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.15006410256410257,
+      "confidence_correlation": 0.3200887194051919,
+      "evaluation_timestamp": "2025-07-30 20:43:24.527115",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 0,
+        "partial_fields": 0,
+        "failed_fields": 7,
+        "missing_fields": 1,
+        "success_rate": 0.0,
+        "failure_rate": 1.0,
+        "average_evaluation_score": 0.15006410256410257,
+        "average_confidence_score": 0.4003349503028904,
+        "evaluation_score_std": 0.26827588383048295,
+        "confidence_score_std": 0.2924510123069229,
+        "field_types": [
+          "text",
+          "date"
+        ],
+        "field_names": [
+          "visit_date",
+          "diagnosis",
+          "doctor_name",
+          "insurance_number",
+          "patient_id",
+          "date_of_birth",
+          "prescription",
+          "patient_name"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.527115"
+      }
+    },
+    {
+      "document_id": "BANK_STATEMENT-010",
+      "document_type": "bank_statement",
+      "field_evaluations": [
+        {
+          "field_name": "account_holder",
+          "expected_value": "Jane Smith",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "statement_date",
+          "expected_value": "2024-01-31",
+          "extracted_value": "01/01/1900",
+          "confidence_score": 0.720151043978984,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.720; Expected: '2024-01-31'; Extracted: '1900-01-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "closing_balance",
+          "expected_value": "4875.25",
+          "extracted_value": "Error",
+          "confidence_score": 0.22927242740686218,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.229; Expected: '4875.25'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "total_withdrawals",
+          "expected_value": "2124.75",
+          "extracted_value": "0.00",
+          "confidence_score": 0.7556244185725794,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.756; Expected: '2124.75'; Extracted: '0.00'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "bank_name",
+          "expected_value": "City Bank",
+          "extracted_value": "N/A",
+          "confidence_score": 0.1799292088081009,
+          "status": "failed",
+          "evaluation_score": 0.16666666666666666,
+          "error_message": "Partial match with score 0.17",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.167; Confidence score: 0.180; Expected: 'city bank'; Extracted: 'n/a'; String similarity: 0.167",
+          "field_type": "text"
+        },
+        {
+          "field_name": "opening_balance",
+          "expected_value": "5000.00",
+          "extracted_value": "5000.00",
+          "confidence_score": 0.7876385398344738,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.788",
+          "field_type": "number"
+        },
+        {
+          "field_name": "account_number",
+          "expected_value": "9876-5432-1098-7654",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_deposits",
+          "expected_value": "2000.00",
+          "extracted_value": "388.00",
+          "confidence_score": 0.8160597178763694,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.816; Expected: '2000.00'; Extracted: '388.00'",
+          "field_type": "number"
+        }
+      ],
+      "overall_accuracy": 0.14583333333333334,
+      "confidence_correlation": 0.23666798774716974,
+      "evaluation_timestamp": "2025-07-30 20:43:24.528119",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 1,
+        "partial_fields": 0,
+        "failed_fields": 5,
+        "missing_fields": 2,
+        "success_rate": 0.125,
+        "failure_rate": 0.875,
+        "average_evaluation_score": 0.14583333333333334,
+        "average_confidence_score": 0.43608441955967125,
+        "evaluation_score_std": 0.35002834352355133,
+        "confidence_score_std": 0.36635211768968,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "account_holder",
+          "statement_date",
+          "closing_balance",
+          "total_withdrawals",
+          "bank_name",
+          "opening_balance",
+          "account_number",
+          "total_deposits"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.528119"
+      }
+    },
+    {
+      "document_id": "CONTRACT-011",
+      "document_type": "contract",
+      "field_evaluations": [
+        {
+          "field_name": "client_name",
+          "expected_value": "XYZ Industries",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_value",
+          "expected_value": "75000.00",
+          "extracted_value": "75000.00",
+          "confidence_score": 0.6888258972152257,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.689",
+          "field_type": "number"
+        },
+        {
+          "field_name": "client_address",
+          "expected_value": "456 Industrial Park, Factory Town, FT 54321",
+          "extracted_value": "456 Industrial Park, Factory Town, FT 54321",
+          "confidence_score": 0.7151644404735922,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.715",
+          "field_type": "text"
+        },
+        {
+          "field_name": "expiration_date",
+          "expected_value": "2024-12-31",
+          "extracted_value": "2024-12-31",
+          "confidence_score": 0.8395664993181711,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 1.000; Confidence score: 0.840",
+          "field_type": "date"
+        },
+        {
+          "field_name": "contract_date",
+          "expected_value": "2024-01-15",
+          "extracted_value": "2024/01/15",
+          "confidence_score": 0.7774961754337938,
+          "status": "success",
+          "evaluation_score": 0.8,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.800; Confidence score: 0.777; Expected: '2024-01-15'; Extracted: '2024/01/15'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "service_description",
+          "expected_value": "Consulting Services",
+          "extracted_value": "Consulting Services",
+          "confidence_score": 0.8268211220096562,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.827",
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_number",
+          "expected_value": "CTR-2024-002",
+          "extracted_value": "CTR-2024-002",
+          "confidence_score": 0.72168347482456,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.722",
+          "field_type": "text"
+        },
+        {
+          "field_name": "payment_terms",
+          "expected_value": "Net 45",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.6552425690091008,
+          "status": "failed",
+          "evaluation_score": 0.21052631578947367,
+          "error_message": "Partial match with score 0.21",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.211; Confidence score: 0.655; Expected: 'net 45'; Extracted: 'invalid value'; String similarity: 0.211",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.7513157894736842,
+      "confidence_correlation": 0.5306838658904586,
+      "evaluation_timestamp": "2025-07-30 20:43:24.528119",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 5,
+        "partial_fields": 0,
+        "failed_fields": 2,
+        "missing_fields": 1,
+        "success_rate": 0.625,
+        "failure_rate": 0.375,
+        "average_evaluation_score": 0.7513157894736842,
+        "average_confidence_score": 0.6531000222855124,
+        "evaluation_score_std": 0.40857207889012087,
+        "confidence_score_std": 0.27171398307435635,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "client_name",
+          "contract_value",
+          "client_address",
+          "expiration_date",
+          "contract_date",
+          "service_description",
+          "contract_number",
+          "payment_terms"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.528119"
+      }
+    },
+    {
+      "document_id": "INVOICE-012",
+      "document_type": "invoice",
+      "field_evaluations": [
+        {
+          "field_name": "vendor_address",
+          "expected_value": "123 Business St, City, State 12345",
+          "extracted_value": "N/A",
+          "confidence_score": 0.10420179038735973,
+          "status": "failed",
+          "evaluation_score": 0.10810810810810811,
+          "error_message": "Partial match with score 0.11",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.108; Confidence score: 0.104; Expected: '123 business st, city, state 12345'; Extracted: 'n/a'; String similarity: 0.108",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "1250.00",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_number",
+          "expected_value": "INV-2024-001",
+          "extracted_value": "INV-2024-001",
+          "confidence_score": 0.7558800705236184,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.756",
+          "field_type": "text"
+        },
+        {
+          "field_name": "vendor_phone",
+          "expected_value": "+1-555-123-4567",
+          "extracted_value": "+1-555-123-4567",
+          "confidence_score": 0.802165835437908,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.802",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "125.00",
+          "extracted_value": "125,00",
+          "confidence_score": 0.7844150656982964,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.784; Expected: '125.00'; Extracted: '12500'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "vendor_name",
+          "expected_value": "Acme Corporation",
+          "extracted_value": "Acme Corporation",
+          "confidence_score": 0.7343726877903813,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.734",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "1125.00",
+          "extracted_value": "1125.00",
+          "confidence_score": 0.7638453698943782,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.764",
+          "field_type": "number"
+        },
+        {
+          "field_name": "invoice_date",
+          "expected_value": "2024-01-15",
+          "extracted_value": "01/15/2024",
+          "confidence_score": 0.8848790495119694,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 1.000; Confidence score: 0.885",
+          "field_type": "date"
+        },
+        {
+          "field_name": "vendor_email",
+          "expected_value": "billing@acme.com",
+          "extracted_value": "billing@acme.com",
+          "confidence_score": 0.9476716753896106,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: email; Evaluation score: 1.000; Confidence score: 0.948",
+          "field_type": "email"
+        },
+        {
+          "field_name": "due_date",
+          "expected_value": "2024-02-15",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "date"
+        }
+      ],
+      "overall_accuracy": 0.6198779424585876,
+      "confidence_correlation": 0.6126186065915548,
+      "evaluation_timestamp": "2025-07-30 20:43:24.528119",
+      "prompt_version": "v1.1",
+      "evaluation_metadata": {
+        "total_fields": 10,
+        "successful_fields": 6,
+        "partial_fields": 0,
+        "failed_fields": 2,
+        "missing_fields": 2,
+        "success_rate": 0.6,
+        "failure_rate": 0.4,
+        "average_evaluation_score": 0.6108108108108108,
+        "average_confidence_score": 0.5777431544633522,
+        "evaluation_score_std": 0.5034093647878669,
+        "confidence_score_std": 0.381076504707802,
+        "field_types": [
+          "phone",
+          "date",
+          "email",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "vendor_address",
+          "total_amount",
+          "invoice_number",
+          "vendor_phone",
+          "tax_amount",
+          "vendor_name",
+          "subtotal",
+          "invoice_date",
+          "vendor_email",
+          "due_date"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.528119"
+      }
+    },
+    {
+      "document_id": "CONTRACT-013",
+      "document_type": "contract",
+      "field_evaluations": [
+        {
+          "field_name": "client_name",
+          "expected_value": "ABC Corporation",
+          "extracted_value": "ABC CORPORATION",
+          "confidence_score": 0.5458486796848633,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.546",
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_value",
+          "expected_value": "50000.00",
+          "extracted_value": "50000.00",
+          "confidence_score": 0.7667819048936466,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.767",
+          "field_type": "number"
+        },
+        {
+          "field_name": "expiration_date",
+          "expected_value": "2025-01-10",
+          "extracted_value": "10-01-2025",
+          "confidence_score": 0.6649390512653484,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.665; Expected: '2025-01-10'; Extracted: '2025-10-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "client_address",
+          "expected_value": "123 Corporate Blvd, Business City, BC 12345",
+          "extracted_value": "123 Corporate Blvd, Business City, BC 12345",
+          "confidence_score": 0.6076076219535612,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.608",
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_date",
+          "expected_value": "2024-01-10",
+          "extracted_value": "January 10, 2024",
+          "confidence_score": 0.8791488459132986,
+          "status": "failed",
+          "evaluation_score": 0.3076923076923077,
+          "error_message": "Partial match with score 0.31",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.308; Confidence score: 0.879; Expected: '2024-01-10'; Extracted: 'january 10, 2024'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "service_description",
+          "expected_value": "Software Development Services",
+          "extracted_value": "Software Development Services",
+          "confidence_score": 0.7739418031409635,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.774",
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_number",
+          "expected_value": "CTR-2024-001",
+          "extracted_value": "CTR-2024-001",
+          "confidence_score": 0.800147523563913,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.800",
+          "field_type": "text"
+        },
+        {
+          "field_name": "payment_terms",
+          "expected_value": "Net 30",
+          "extracted_value": "Net 30",
+          "confidence_score": 0.7661847125800427,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.766",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.7884615384615384,
+      "confidence_correlation": 0.0,
+      "evaluation_timestamp": "2025-07-30 20:43:24.529119",
+      "prompt_version": "v1.1",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 4,
+        "partial_fields": 0,
+        "failed_fields": 4,
+        "missing_fields": 0,
+        "success_rate": 0.5,
+        "failure_rate": 0.5,
+        "average_evaluation_score": 0.7884615384615384,
+        "average_confidence_score": 0.7255750178744547,
+        "evaluation_score_std": 0.4002323923400948,
+        "confidence_score_std": 0.11001757236799924,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "client_name",
+          "contract_value",
+          "expiration_date",
+          "client_address",
+          "contract_date",
+          "service_description",
+          "contract_number",
+          "payment_terms"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.529119"
+      }
+    },
+    {
+      "document_id": "BANK_STATEMENT-014",
+      "document_type": "bank_statement",
+      "field_evaluations": [
+        {
+          "field_name": "account_holder",
+          "expected_value": "Jane Smith",
+          "extracted_value": "Jane Smith",
+          "confidence_score": 0.6060183045927349,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.606",
+          "field_type": "text"
+        },
+        {
+          "field_name": "statement_date",
+          "expected_value": "2024-01-31",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "date"
+        },
+        {
+          "field_name": "total_withdrawals",
+          "expected_value": "2124.75",
+          "extracted_value": "N/A",
+          "confidence_score": 0.27139442866508945,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.271; Expected: '2124.75'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "closing_balance",
+          "expected_value": "4875.25",
+          "extracted_value": "Unknown",
+          "confidence_score": 0.27849819228075645,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.278; Expected: '4875.25'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "bank_name",
+          "expected_value": "City Bank",
+          "extracted_value": "City Bank",
+          "confidence_score": 0.6765635262887225,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.677",
+          "field_type": "text"
+        },
+        {
+          "field_name": "opening_balance",
+          "expected_value": "5000.00",
+          "extracted_value": "5000.00",
+          "confidence_score": 0.7192080168808828,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.719",
+          "field_type": "number"
+        },
+        {
+          "field_name": "account_number",
+          "expected_value": "9876-5432-1098-7654",
+          "extracted_value": "N/A",
+          "confidence_score": 0.14214958151881482,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.142; Expected: '9876-5432-1098-7654'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_deposits",
+          "expected_value": "2000.00",
+          "extracted_value": "7948.00",
+          "confidence_score": 0.9296910715928806,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.930; Expected: '2000.00'; Extracted: '7948.00'",
+          "field_type": "number"
+        }
+      ],
+      "overall_accuracy": 0.375,
+      "confidence_correlation": 0.483702728891021,
+      "evaluation_timestamp": "2025-07-30 20:43:24.529119",
+      "prompt_version": "v1.4",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 1,
+        "partial_fields": 0,
+        "failed_fields": 6,
+        "missing_fields": 1,
+        "success_rate": 0.125,
+        "failure_rate": 0.875,
+        "average_evaluation_score": 0.375,
+        "average_confidence_score": 0.45294039022748517,
+        "evaluation_score_std": 0.5175491695067657,
+        "confidence_score_std": 0.32442581289225336,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "account_holder",
+          "statement_date",
+          "total_withdrawals",
+          "closing_balance",
+          "bank_name",
+          "opening_balance",
+          "account_number",
+          "total_deposits"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.529119"
+      }
+    },
+    {
+      "document_id": "RECEIPT-015",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Coffee Shop",
+          "extracted_value": "Coffee Shop",
+          "confidence_score": 0.6480214125819554,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.648",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "12.75",
+          "extracted_value": "999.99",
+          "confidence_score": 0.909155125832543,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.909; Expected: '12.75'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-25",
+          "extracted_value": "01/01/1900",
+          "confidence_score": 0.6194630125165695,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.619; Expected: '2024-01-25'; Extracted: '1900-01-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-001",
+          "extracted_value": "Error",
+          "confidence_score": 0.28760249157531087,
+          "status": "failed",
+          "evaluation_score": 0.16666666666666666,
+          "error_message": "Partial match with score 0.17",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.167; Confidence score: 0.288; Expected: 'rcp-001'; Extracted: 'error'; String similarity: 0.167",
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "1.02",
+          "extracted_value": "N/A",
+          "confidence_score": 0.19696313395915538,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.197; Expected: '1.02'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "123 Coffee St, Downtown, City",
+          "extracted_value": "N/A",
+          "confidence_score": 0.2132882185829009,
+          "status": "failed",
+          "evaluation_score": 0.0625,
+          "error_message": "Partial match with score 0.06",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.062; Confidence score: 0.213; Expected: '123 coffee st, downtown, city'; Extracted: 'n/a'; String similarity: 0.062",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "11.73",
+          "extracted_value": "0.00",
+          "confidence_score": 0.7837847548876975,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.784; Expected: '11.73'; Extracted: '0.00'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Credit Card",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.5784184638394873,
+          "status": "failed",
+          "evaluation_score": 0.08333333333333333,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.083; Confidence score: 0.578; Expected: 'credit card'; Extracted: 'invalid value'; String similarity: 0.083",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.1875,
+      "confidence_correlation": 0.09702936224028029,
+      "evaluation_timestamp": "2025-07-30 20:43:24.529119",
+      "prompt_version": "v1.4",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 0,
+        "partial_fields": 0,
+        "failed_fields": 8,
+        "missing_fields": 0,
+        "success_rate": 0.0,
+        "failure_rate": 1.0,
+        "average_evaluation_score": 0.1640625,
+        "average_confidence_score": 0.5295870767219525,
+        "evaluation_score_std": 0.34294865108605693,
+        "confidence_score_std": 0.2679065503416082,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "total_amount",
+          "transaction_date",
+          "receipt_number",
+          "tax_amount",
+          "merchant_address",
+          "subtotal",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.529119"
+      }
+    },
+    {
+      "document_id": "RECEIPT-016",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Gas Station",
+          "extracted_value": "Gas Station",
+          "confidence_score": 0.5643294073503367,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.564",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "35.00",
+          "extracted_value": "35.0",
+          "confidence_score": 0.7501847530998591,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.750; Expected: '35.00'; Extracted: '35.0'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-27",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "date"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-003",
+          "extracted_value": "Error",
+          "confidence_score": 0.14535738638313425,
+          "status": "failed",
+          "evaluation_score": 0.16666666666666666,
+          "error_message": "Partial match with score 0.17",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.167; Confidence score: 0.145; Expected: 'rcp-003'; Extracted: 'error'; String similarity: 0.167",
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "2.80",
+          "extracted_value": "999.99",
+          "confidence_score": 0.931499904663498,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.931; Expected: '2.80'; Extracted: '999.99'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "789 Fuel Rd, Highway Exit",
+          "extracted_value": "Not found",
+          "confidence_score": 0.16067983008073267,
+          "status": "failed",
+          "evaluation_score": 0.23529411764705882,
+          "error_message": "Partial match with score 0.24",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.235; Confidence score: 0.161; Expected: '789 fuel rd, highway exit'; Extracted: 'not found'; String similarity: 0.235",
+          "field_type": "text"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "32.20",
+          "extracted_value": "N/A",
+          "confidence_score": 0.13200013993072893,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.132; Expected: '32.20'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Cash",
+          "extracted_value": "Cash",
+          "confidence_score": 0.6825117179342859,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.683",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.46040723981900455,
+      "confidence_correlation": 0.4353598789643777,
+      "evaluation_timestamp": "2025-07-30 20:43:24.530119",
+      "prompt_version": "v1.4",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 1,
+        "partial_fields": 0,
+        "failed_fields": 6,
+        "missing_fields": 1,
+        "success_rate": 0.125,
+        "failure_rate": 0.875,
+        "average_evaluation_score": 0.4252450980392157,
+        "average_confidence_score": 0.42082039243032193,
+        "evaluation_score_std": 0.48351007558212544,
+        "confidence_score_std": 0.351000926803936,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "total_amount",
+          "transaction_date",
+          "receipt_number",
+          "tax_amount",
+          "merchant_address",
+          "subtotal",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.530119"
+      }
+    },
+    {
+      "document_id": "BANK_STATEMENT-017",
+      "document_type": "bank_statement",
+      "field_evaluations": [
+        {
+          "field_name": "account_holder",
+          "expected_value": "Jane Smith",
+          "extracted_value": "Jane Smith",
+          "confidence_score": 0.8113127080056799,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.811",
+          "field_type": "text"
+        },
+        {
+          "field_name": "statement_date",
+          "expected_value": "2024-01-31",
+          "extracted_value": "Invalid date",
+          "confidence_score": 0.8682962113229156,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.868; Expected: '2024-01-31'; Extracted: 'invalid date'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "closing_balance",
+          "expected_value": "4875.25",
+          "extracted_value": "N/A",
+          "confidence_score": 0.12205932766693194,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.122; Expected: '4875.25'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "total_withdrawals",
+          "expected_value": "2124.75",
+          "extracted_value": "2124.75",
+          "confidence_score": 0.8619323318643763,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.862",
+          "field_type": "number"
+        },
+        {
+          "field_name": "bank_name",
+          "expected_value": "City Bank",
+          "extracted_value": "Not found",
+          "confidence_score": 0.1896855847017632,
+          "status": "failed",
+          "evaluation_score": 0.3333333333333333,
+          "error_message": "Partial match with score 0.33",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.333; Confidence score: 0.190; Expected: 'city bank'; Extracted: 'not found'; String similarity: 0.333",
+          "field_type": "text"
+        },
+        {
+          "field_name": "opening_balance",
+          "expected_value": "5000.00",
+          "extracted_value": "5000.00",
+          "confidence_score": 0.8177069062200073,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.818",
+          "field_type": "number"
+        },
+        {
+          "field_name": "account_number",
+          "expected_value": "9876-5432-1098-7654",
+          "extracted_value": "9876-5432-1098-7654",
+          "confidence_score": 0.7701358930089258,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.770",
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_deposits",
+          "expected_value": "2000.00",
+          "extracted_value": "0.00",
+          "confidence_score": 0.890980256110303,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.891; Expected: '2000.00'; Extracted: '0.00'",
+          "field_type": "number"
+        }
+      ],
+      "overall_accuracy": 0.5416666666666667,
+      "confidence_correlation": 0.3903301090171743,
+      "evaluation_timestamp": "2025-07-30 20:43:24.530119",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 4,
+        "partial_fields": 0,
+        "failed_fields": 4,
+        "missing_fields": 0,
+        "success_rate": 0.5,
+        "failure_rate": 0.5,
+        "average_evaluation_score": 0.5416666666666666,
+        "average_confidence_score": 0.6665136523626128,
+        "evaluation_score_std": 0.5019802057692384,
+        "confidence_score_std": 0.3179508431614382,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "account_holder",
+          "statement_date",
+          "closing_balance",
+          "total_withdrawals",
+          "bank_name",
+          "opening_balance",
+          "account_number",
+          "total_deposits"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.530119"
+      }
+    },
+    {
+      "document_id": "CONTRACT-018",
+      "document_type": "contract",
+      "field_evaluations": [
+        {
+          "field_name": "client_name",
+          "expected_value": "ABC Corporation",
+          "extracted_value": "Invalid value",
+          "confidence_score": 0.7939210572991243,
+          "status": "failed",
+          "evaluation_score": 0.21428571428571427,
+          "error_message": "Partial match with score 0.21",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.214; Confidence score: 0.794; Expected: 'abc corporation'; Extracted: 'invalid value'; String similarity: 0.214",
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_value",
+          "expected_value": "50000.00",
+          "extracted_value": "N/A",
+          "confidence_score": 0.21234419108225,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.212; Expected: '50000.00'; Extracted: ''",
+          "field_type": "number"
+        },
+        {
+          "field_name": "client_address",
+          "expected_value": "123 Corporate Blvd, Business City, BC 12345",
+          "extracted_value": "Error",
+          "confidence_score": 0.2925233768245065,
+          "status": "failed",
+          "evaluation_score": 0.08333333333333333,
+          "error_message": "Partial match with score 0.08",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.083; Confidence score: 0.293; Expected: '123 corporate blvd, business city, bc 12345'; Extracted: 'error'; String similarity: 0.083",
+          "field_type": "text"
+        },
+        {
+          "field_name": "expiration_date",
+          "expected_value": "2025-01-10",
+          "extracted_value": "2025/01/10",
+          "confidence_score": 0.6053883398167155,
+          "status": "failed",
+          "evaluation_score": 0.8,
+          "error_message": "Partial match with score 0.80",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.800; Confidence score: 0.605; Expected: '2025-01-10'; Extracted: '2025/01/10'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "contract_date",
+          "expected_value": "2024-01-10",
+          "extracted_value": "10-01-2024",
+          "confidence_score": 0.7405372477673107,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: date; Evaluation score: 0.000; Confidence score: 0.741; Expected: '2024-01-10'; Extracted: '2024-10-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "service_description",
+          "expected_value": "Software Development Services",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "contract_number",
+          "expected_value": "CTR-2024-001",
+          "extracted_value": "N/A",
+          "confidence_score": 0.238776753093282,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: text; Evaluation score: 0.000; Confidence score: 0.239; Expected: 'ctr-2024-001'; Extracted: 'n/a'; String similarity: 0.000",
+          "field_type": "text"
+        },
+        {
+          "field_name": "payment_terms",
+          "expected_value": "Net 30",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.13720238095238096,
+      "confidence_correlation": 0.36613077216609186,
+      "evaluation_timestamp": "2025-07-30 20:43:24.531121",
+      "prompt_version": "v1.5",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 0,
+        "partial_fields": 0,
+        "failed_fields": 6,
+        "missing_fields": 2,
+        "success_rate": 0.0,
+        "failure_rate": 1.0,
+        "average_evaluation_score": 0.13720238095238096,
+        "average_confidence_score": 0.36043637073539864,
+        "evaluation_score_std": 0.27832839418812066,
+        "confidence_score_std": 0.31476984858362184,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "client_name",
+          "contract_value",
+          "client_address",
+          "expiration_date",
+          "contract_date",
+          "service_description",
+          "contract_number",
+          "payment_terms"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.531121"
+      }
+    },
+    {
+      "document_id": "RECEIPT-019",
+      "document_type": "receipt",
+      "field_evaluations": [
+        {
+          "field_name": "merchant_name",
+          "expected_value": "Grocery Store",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "total_amount",
+          "expected_value": "45.30",
+          "extracted_value": "45,30",
+          "confidence_score": 0.8148938536053384,
+          "status": "failed",
+          "evaluation_score": 0.0,
+          "error_message": "Complete mismatch between expected and extracted values",
+          "evaluation_notes": "Field type: number; Evaluation score: 0.000; Confidence score: 0.815; Expected: '45.30'; Extracted: '4530'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "transaction_date",
+          "expected_value": "2024-01-26",
+          "extracted_value": "26-01-2024",
+          "confidence_score": 0.7914097666641455,
+          "status": "partial",
+          "evaluation_score": 0.7,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.700; Confidence score: 0.791; Expected: '2024-01-26'; Extracted: '2024-26-01'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "receipt_number",
+          "expected_value": "RCP-002",
+          "extracted_value": "RCP-002",
+          "confidence_score": 0.816697314620051,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.817",
+          "field_type": "text"
+        },
+        {
+          "field_name": "tax_amount",
+          "expected_value": "3.62",
+          "extracted_value": "3.62",
+          "confidence_score": 0.9357125367797248,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.936",
+          "field_type": "number"
+        },
+        {
+          "field_name": "subtotal",
+          "expected_value": "41.68",
+          "extracted_value": "41.680",
+          "confidence_score": 0.7379186559565375,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.738; Expected: '41.68'; Extracted: '41.680'",
+          "field_type": "number"
+        },
+        {
+          "field_name": "merchant_address",
+          "expected_value": "456 Food Ave, Shopping Center",
+          "extracted_value": null,
+          "confidence_score": 0.0,
+          "status": "missing",
+          "evaluation_score": 0.0,
+          "error_message": "Extracted value is None",
+          "evaluation_notes": null,
+          "field_type": "text"
+        },
+        {
+          "field_name": "payment_method",
+          "expected_value": "Debit Card",
+          "extracted_value": "Debit Card",
+          "confidence_score": 0.558925313048409,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.559",
+          "field_type": "text"
+        }
+      ],
+      "overall_accuracy": 0.5692307692307692,
+      "confidence_correlation": 0.0,
+      "evaluation_timestamp": "2025-07-30 20:43:24.531121",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 3,
+        "partial_fields": 1,
+        "failed_fields": 2,
+        "missing_fields": 2,
+        "success_rate": 0.375,
+        "failure_rate": 0.5,
+        "average_evaluation_score": 0.5875,
+        "average_confidence_score": 0.5819446800842758,
+        "evaluation_score_std": 0.4969550137731641,
+        "confidence_score_std": 0.37427614510399565,
+        "field_types": [
+          "date",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "merchant_name",
+          "total_amount",
+          "transaction_date",
+          "receipt_number",
+          "tax_amount",
+          "subtotal",
+          "merchant_address",
+          "payment_method"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.531121"
+      }
+    },
+    {
+      "document_id": "FORM-020",
+      "document_type": "form",
+      "field_evaluations": [
+        {
+          "field_name": "phone",
+          "expected_value": "+1-555-987-6543",
+          "extracted_value": "+1-555-987-6543",
+          "confidence_score": 0.7624872900518322,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: phone; Evaluation score: 1.000; Confidence score: 0.762",
+          "field_type": "phone"
+        },
+        {
+          "field_name": "ssn",
+          "expected_value": "987-65-4321",
+          "extracted_value": "987-65-4321",
+          "confidence_score": 0.519838793999493,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.520",
+          "field_type": "text"
+        },
+        {
+          "field_name": "address",
+          "expected_value": "456 Oak Ave, Somewhere, USA 54321",
+          "extracted_value": "456 Oak Ave, Somewhere, USA 54321",
+          "confidence_score": 0.7563165230260956,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.756",
+          "field_type": "text"
+        },
+        {
+          "field_name": "annual_income",
+          "expected_value": "45000",
+          "extracted_value": "45000",
+          "confidence_score": 0.6566315386697565,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: number; Evaluation score: 1.000; Confidence score: 0.657",
+          "field_type": "number"
+        },
+        {
+          "field_name": "applicant_name",
+          "expected_value": "Jane Smith",
+          "extracted_value": "Jane Smith",
+          "confidence_score": 0.6737706647749722,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.674",
+          "field_type": "text"
+        },
+        {
+          "field_name": "date_of_birth",
+          "expected_value": "1990-07-22",
+          "extracted_value": "22-07-1990",
+          "confidence_score": 0.7574877654042935,
+          "status": "partial",
+          "evaluation_score": 0.7,
+          "error_message": null,
+          "evaluation_notes": "Field type: date; Evaluation score: 0.700; Confidence score: 0.757; Expected: '1990-07-22'; Extracted: '1990-22-07'",
+          "field_type": "date"
+        },
+        {
+          "field_name": "employment_status",
+          "expected_value": "Part-time",
+          "extracted_value": "Part-time",
+          "confidence_score": 0.5765121156100315,
+          "status": "failed",
+          "evaluation_score": 1.0,
+          "error_message": "Partial match with score 1.00",
+          "evaluation_notes": "Field type: text; Evaluation score: 1.000; Confidence score: 0.577",
+          "field_type": "text"
+        },
+        {
+          "field_name": "email",
+          "expected_value": "jane.smith@company.com",
+          "extracted_value": "jane.smith@company.com",
+          "confidence_score": 0.8295462887054266,
+          "status": "success",
+          "evaluation_score": 1.0,
+          "error_message": null,
+          "evaluation_notes": "Field type: email; Evaluation score: 1.000; Confidence score: 0.830",
+          "field_type": "email"
+        }
+      ],
+      "overall_accuracy": 0.9625,
+      "confidence_correlation": 0.0,
+      "evaluation_timestamp": "2025-07-30 20:43:24.531121",
+      "prompt_version": "v1.2",
+      "evaluation_metadata": {
+        "total_fields": 8,
+        "successful_fields": 3,
+        "partial_fields": 1,
+        "failed_fields": 4,
+        "missing_fields": 0,
+        "success_rate": 0.375,
+        "failure_rate": 0.5,
+        "average_evaluation_score": 0.9625,
+        "average_confidence_score": 0.6915738725302376,
+        "evaluation_score_std": 0.10606601717798214,
+        "confidence_score_std": 0.10479327846654847,
+        "field_types": [
+          "phone",
+          "date",
+          "email",
+          "number",
+          "text"
+        ],
+        "field_names": [
+          "phone",
+          "ssn",
+          "address",
+          "annual_income",
+          "applicant_name",
+          "date_of_birth",
+          "employment_status",
+          "email"
+        ],
+        "processing_timestamp": "2025-07-30T20:43:24.531121"
+      }
+    }
+  ],
+  "document_type_distribution": {
+    "medical_record": 3,
+    "contract": 3,
+    "form": 2,
+    "bank_statement": 4,
+    "receipt": 5,
+    "invoice": 3
+  },
+  "success_rate_distribution": {
+    "high_accuracy": 0.05,
+    "partial_accuracy": 0.5,
+    "low_accuracy": 0.45
+  },
+  "field_performance_summary": {
+    "phone": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 1.0,
+      "success_rate": 0.3333333333333333
+    },
+    "address": {
+      "total_evaluations": 3,
+      "successful_evaluations": 3,
+      "failed_evaluations": 0,
+      "average_score": 1.0,
+      "success_rate": 1.0
+    },
+    "ssn": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.6666666666666666,
+      "success_rate": 0.0
+    },
+    "annual_income": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.3333333333333333,
+      "success_rate": 0.0
+    },
+    "applicant_name": {
+      "total_evaluations": 3,
+      "successful_evaluations": 2,
+      "failed_evaluations": 1,
+      "average_score": 1.0,
+      "success_rate": 0.6666666666666666
+    },
+    "date_of_birth": {
+      "total_evaluations": 4,
+      "successful_evaluations": 0,
+      "failed_evaluations": 4,
+      "average_score": 0.375,
+      "success_rate": 0.0
+    },
+    "employment_status": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.358974358974359,
+      "success_rate": 0.0
+    },
+    "email": {
+      "total_evaluations": 3,
+      "successful_evaluations": 2,
+      "failed_evaluations": 1,
+      "average_score": 0.6666666666666666,
+      "success_rate": 0.6666666666666666
+    },
+    "tax_amount": {
+      "total_evaluations": 9,
+      "successful_evaluations": 2,
+      "failed_evaluations": 7,
+      "average_score": 0.2222222222222222,
+      "success_rate": 0.2222222222222222
+    },
+    "vendor_email": {
+      "total_evaluations": 3,
+      "successful_evaluations": 3,
+      "failed_evaluations": 0,
+      "average_score": 1.0,
+      "success_rate": 1.0
+    },
+    "due_date": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.13333333333333333,
+      "success_rate": 0.0
+    },
+    "vendor_address": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.395010395010395,
+      "success_rate": 0.0
+    },
+    "total_amount": {
+      "total_evaluations": 9,
+      "successful_evaluations": 3,
+      "failed_evaluations": 6,
+      "average_score": 0.3333333333333333,
+      "success_rate": 0.3333333333333333
+    },
+    "invoice_number": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 0.6666666666666666,
+      "success_rate": 0.3333333333333333
+    },
+    "vendor_phone": {
+      "total_evaluations": 3,
+      "successful_evaluations": 3,
+      "failed_evaluations": 0,
+      "average_score": 1.0,
+      "success_rate": 1.0
+    },
+    "vendor_name": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 1.0,
+      "success_rate": 0.3333333333333333
+    },
+    "subtotal": {
+      "total_evaluations": 9,
+      "successful_evaluations": 3,
+      "failed_evaluations": 6,
+      "average_score": 0.3333333333333333,
+      "success_rate": 0.3333333333333333
+    },
+    "invoice_date": {
+      "total_evaluations": 3,
+      "successful_evaluations": 2,
+      "failed_evaluations": 1,
+      "average_score": 0.7666666666666666,
+      "success_rate": 0.6666666666666666
+    },
+    "client_name": {
+      "total_evaluations": 4,
+      "successful_evaluations": 0,
+      "failed_evaluations": 4,
+      "average_score": 0.30357142857142855,
+      "success_rate": 0.0
+    },
+    "contract_value": {
+      "total_evaluations": 4,
+      "successful_evaluations": 2,
+      "failed_evaluations": 2,
+      "average_score": 0.75,
+      "success_rate": 0.5
+    },
+    "client_address": {
+      "total_evaluations": 4,
+      "successful_evaluations": 1,
+      "failed_evaluations": 3,
+      "average_score": 0.5625000000000001,
+      "success_rate": 0.25
+    },
+    "expiration_date": {
+      "total_evaluations": 4,
+      "successful_evaluations": 1,
+      "failed_evaluations": 3,
+      "average_score": 0.5240740740740741,
+      "success_rate": 0.25
+    },
+    "contract_date": {
+      "total_evaluations": 4,
+      "successful_evaluations": 1,
+      "failed_evaluations": 3,
+      "average_score": 0.27692307692307694,
+      "success_rate": 0.25
+    },
+    "service_description": {
+      "total_evaluations": 4,
+      "successful_evaluations": 2,
+      "failed_evaluations": 2,
+      "average_score": 0.5,
+      "success_rate": 0.5
+    },
+    "contract_number": {
+      "total_evaluations": 4,
+      "successful_evaluations": 2,
+      "failed_evaluations": 2,
+      "average_score": 0.5238095238095238,
+      "success_rate": 0.5
+    },
+    "payment_terms": {
+      "total_evaluations": 4,
+      "successful_evaluations": 1,
+      "failed_evaluations": 3,
+      "average_score": 0.5526315789473684,
+      "success_rate": 0.25
+    },
+    "merchant_name": {
+      "total_evaluations": 6,
+      "successful_evaluations": 1,
+      "failed_evaluations": 5,
+      "average_score": 0.712121212121212,
+      "success_rate": 0.16666666666666666
+    },
+    "transaction_date": {
+      "total_evaluations": 6,
+      "successful_evaluations": 0,
+      "failed_evaluations": 6,
+      "average_score": 0.2333333333333333,
+      "success_rate": 0.0
+    },
+    "receipt_number": {
+      "total_evaluations": 6,
+      "successful_evaluations": 1,
+      "failed_evaluations": 5,
+      "average_score": 0.2222222222222222,
+      "success_rate": 0.16666666666666666
+    },
+    "merchant_address": {
+      "total_evaluations": 6,
+      "successful_evaluations": 0,
+      "failed_evaluations": 6,
+      "average_score": 0.4180534055727554,
+      "success_rate": 0.0
+    },
+    "payment_method": {
+      "total_evaluations": 6,
+      "successful_evaluations": 1,
+      "failed_evaluations": 5,
+      "average_score": 0.6805555555555557,
+      "success_rate": 0.16666666666666666
+    },
+    "visit_date": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    },
+    "diagnosis": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.08,
+      "success_rate": 0.0
+    },
+    "doctor_name": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.08333333333333333,
+      "success_rate": 0.0
+    },
+    "insurance_number": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.08333333333333333,
+      "success_rate": 0.0
+    },
+    "patient_id": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    },
+    "prescription": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.15384615384615385,
+      "success_rate": 0.0
+    },
+    "patient_name": {
+      "total_evaluations": 1,
+      "successful_evaluations": 0,
+      "failed_evaluations": 1,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    },
+    "account_holder": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 0.6666666666666666,
+      "success_rate": 0.3333333333333333
+    },
+    "statement_date": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    },
+    "closing_balance": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    },
+    "total_withdrawals": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 0.3333333333333333,
+      "success_rate": 0.3333333333333333
+    },
+    "bank_name": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.5,
+      "success_rate": 0.0
+    },
+    "opening_balance": {
+      "total_evaluations": 3,
+      "successful_evaluations": 3,
+      "failed_evaluations": 0,
+      "average_score": 1.0,
+      "success_rate": 1.0
+    },
+    "account_number": {
+      "total_evaluations": 3,
+      "successful_evaluations": 1,
+      "failed_evaluations": 2,
+      "average_score": 0.3333333333333333,
+      "success_rate": 0.3333333333333333
+    },
+    "total_deposits": {
+      "total_evaluations": 3,
+      "successful_evaluations": 0,
+      "failed_evaluations": 3,
+      "average_score": 0.0,
+      "success_rate": 0.0
+    }
+  },
+  "generated_at": "2025-07-30T20:43:24.532118",
+  "total_documents": 24,
+  "document_types": [
+    "invoice",
+    "receipt",
+    "form",
+    "contract",
+    "medical_record",
+    "bank_statement"
+  ]
+}
